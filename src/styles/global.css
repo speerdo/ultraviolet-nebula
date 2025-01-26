@@ -4,49 +4,83 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+	scroll-behavior: smooth;
+}
+
+::selection {
+	background: rgba(var(--rose), 0.97);
+	color: #f8fafc;
+}
+
 :root {
-	--accent: #2337ff;
-	--accent-dark: #000d8a;
-	--black: 15, 18, 25;
+	--accent: var(--purple-light);
+	--accent-dark: #7c3aed; /* Darker purple accent */
+	--black: 1, 1, 1;
+	--black-light: 27, 21, 17;
 	--gray: 96, 115, 159;
 	--gray-light: 229, 233, 240;
 	--gray-dark: 34, 41, 57;
-	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
+	--purple-darkest: 17, 12, 34;  /* #110c22 */
+	--purple-darker: 35, 16, 64;   /* #231040 */
+	--purple-dark: 33, 14, 37;
+	--purple: 51, 26, 55;
+	--purple-light: #D896E2;
+	--rose: 90, 55, 60;
+	--brown-dark: 57, 26, 14;
+	--brown: 101, 55, 22;
+	--gray-gradient: rgba(var(--purple-darkest), 0.97), rgba(var(--purple-darker), 0.93);
+	
 	--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
 		0 16px 32px rgba(var(--gray), 33%);
 }
 @font-face {
-	font-family: 'Atkinson';
-	src: url('/fonts/atkinson-regular.woff') format('woff');
+	font-family: 'Smooch Sans';
+	src: url('/fonts/SmoochSans-Regular.ttf') format('truetype');
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
-	font-family: 'Atkinson';
-	src: url('/fonts/atkinson-bold.woff') format('woff');
+	font-family: 'Smooch Sans';
+	src: url('/fonts/SmoochSans-Bold.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Lato';
+	src: url('/fonts/Lato-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Lato';
+	src: url('/fonts/Lato-Bold.ttf') format('truetype');
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
 }
 body {
-	font-family: 'Atkinson', sans-serif;
+	font-family: 'Lato', sans-serif;
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
+	background: linear-gradient(to right, rgba(var(--black), 1) 0%, rgba(var(--purple-dark), 1) 100%);
 	background-size: 100% 600px;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
-	color: rgb(var(--gray-dark));
+	color: #f8fafc;
 	font-size: 20px;
 	line-height: 1.7;
 }
 main {
-	width: 720px;
-	max-width: calc(100% - 2em);
-	margin: auto;
-	padding: 3em 1em;
+	width: 100%;
 }
 h1,
 h2,
@@ -54,8 +88,9 @@ h3,
 h4,
 h5,
 h6 {
+	font-family: 'Smooch Sans', sans-serif !important;
 	margin: 0 0 0.5rem 0;
-	color: rgb(var(--black));
+	color: #f8fafc;  /* Very light gray/white for headings */
 	line-height: 1.2;
 }
 h1 {
@@ -102,11 +137,10 @@ table {
 img {
 	max-width: 100%;
 	height: auto;
-	border-radius: 8px;
 }
 code {
 	padding: 2px 5px;
-	background-color: rgb(var(--gray-light));
+	background-color: rgb(var(--purple-darkest));
 	border-radius: 2px;
 }
 pre {
@@ -152,3 +186,11 @@ hr {
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
 }
+
+.background-accordion {
+	background: linear-gradient(to right, rgba(var(--purple), 1) 0%, rgba(var(--rose), 1) 100%);
+}
+.company-name {
+	font-size: 2rem;
+}
+

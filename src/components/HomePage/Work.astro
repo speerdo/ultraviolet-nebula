@@ -1,0 +1,51 @@
+---
+import ProjectCard from './ProjectCard.astro';
+
+// Keep your projects list in Astro frontmatter
+const projects = [
+  {
+    title: 'Portfolio Website',
+    description: 'A showcase of my work and experience.',
+    image: '/public/blog-placeholder-1.jpg',
+    link: 'https://example.com/portfolio',
+  },
+  {
+    title: 'E-Commerce App',
+    description: 'A fully functional e-commerce platform with React.',
+    image: '/public/blog-placeholder-2.jpg',
+    link: 'https://example.com/ecommerce',
+  },
+  {
+    title: 'Blog CMS',
+    description: 'A custom blog platform powered by Node.js and MongoDB.',
+    image: '/public/blog-placeholder-3.jpg',
+    link: 'https://example.com/blog',
+  },
+];
+---
+
+<section id="work" class="work-section">
+  <h2 class="section-title">My Work</h2>
+  <div class="projects-grid">
+    {projects.map((project) => (
+      <ProjectCard project={project} />
+    ))}
+  </div>
+</section>
+
+<style>
+  .work-section {
+    @apply py-16 px-4;
+  }
+
+  .section-title {
+    font-size: 4rem;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .projects-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto justify-items-center;
+  }
+</style>
