@@ -2,7 +2,8 @@
 title: 'Mounjaro US Website'
 description: 'Led the redesign and development of the Mounjaro US website, improving user experience and performance.'
 pubDate: '2024-01-15'
-heroImage: '/images/mounjaro.png'
+heroImage: '/images/mounjaro_desktop.png'
+mobileImage: '/images/mounjaro.png'
 projectUrl: 'https://mounjaro.lilly.com'
 technologies: ['Next.js', 'React', 'TypeScript', 'AWS', 'Tailwind CSS']
 company: 'Eli Lilly and Company'

@@ -2,7 +2,7 @@
 title: "Advanced Agrilytics"
 description: "A fully functional e-commerce platform with React."
 pubDate: "2023-03-20"
-heroImage: "/images/adag.png"
+heroImage: "/images/adag_desktop.png"
 mobileImage: "/images/adag.png"
 projectUrl: "https://advancedagrilytics.com/"
 technologies: 

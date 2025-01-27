@@ -10,12 +10,13 @@ interface Props {
 	pubDate: Date;
 	updatedDate?: Date;
 	heroImage?: string;
+	mobileImage?: string;
 	projectUrl: string;
 	technologies: string[];
 	company: string;
 };
 
-const { title, description, pubDate, updatedDate, heroImage, projectUrl, technologies, company } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, mobileImage, projectUrl, technologies } = Astro.props;
 ---
 
 <html lang="en">
@@ -27,9 +28,15 @@ const { title, description, pubDate, updatedDate, heroImage, projectUrl, technol
 		<Header />
 		<main class="work-post">
 			<article>
-				<div class="hero-image">
-					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
+				<div class="images-container">
+					<div class="mobile-image">
+						{mobileImage && <img width={375} height={667} src={mobileImage} alt={title} />}
+					</div>
+					<div class="hero-image">
+						{heroImage && <img width={1020} height={510} src={heroImage} alt={title} />}
+					</div>
 				</div>
+				
 				<div class="prose">
 					<div class="title">
 						<h1>{title}</h1>
@@ -67,14 +74,58 @@ const { title, description, pubDate, updatedDate, heroImage, projectUrl, technol
 		max-width: 100%;
 		margin: 10rem auto 0;
 	}
+	.images-container {
+		width: 100%;
+		max-width: 1200px;
+		margin: 0 auto;
+		display: flex;
+		gap: 2rem;
+		padding: 0 1rem;
+		flex-direction: column-reverse;
+	}
+	.mobile-image, .hero-image {
+		transition: all 0.3s ease;
+		position: relative;
+		z-index: 1;
+	}
+	.mobile-image:hover, .hero-image:hover {
+		transform: scale(1.05);
+		z-index: 2;
+	}
+	.mobile-image {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+	.mobile-image img {
+		max-width: 375px;
+		height: auto;
+		border-radius: 12px;
+		box-shadow: var(--box-shadow);
+	}
 	.hero-image {
 		width: 100%;
 	}
 	.hero-image img {
 		display: block;
-		margin: 0 auto;
+		width: 100%;
+		height: auto;
 		border-radius: 12px;
 		box-shadow: var(--box-shadow);
+	}
+
+	/* Desktop layout */
+	@media (min-width: 768px) {
+		.images-container {
+			flex-direction: row;
+			align-items: center;
+		}
+		.mobile-image {
+			width: 25%;
+		}
+		.hero-image {
+			width: 75%;
+		}
 	}
 	.prose {
 		width: 720px;
@@ -120,13 +171,14 @@ const { title, description, pubDate, updatedDate, heroImage, projectUrl, technol
 		display: inline-block;
 		text-decoration: none;
 		padding: 0.5em 1em;
-		background: var(--accent);
+		background: var(--accent-dark);
 		border-radius: 4px;
 		color: var(--white);
 		transition: all 0.2s ease;
 	}
 	.project-link:hover {
-		background: var(--accent-dark);
+		background: var(--accent);
+		color: var(--white);
 		transform: translateY(-2px);
 	}
 </style> 

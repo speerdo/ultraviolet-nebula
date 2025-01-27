@@ -114,7 +114,7 @@ b {
 	font-weight: 700;
 }
 a {
-	color: var(--accent);
+	color: var(--white);
 }
 a:hover {
 	color: var(--accent);

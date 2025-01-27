@@ -19,6 +19,7 @@ const work = defineCollection({
 		pubDate: z.coerce.date(),
 		updatedDate: z.coerce.date().optional(),
 		heroImage: z.string().optional(),
+		mobileImage: z.string().optional(),
 		projectUrl: z.string(),
 		technologies: z.array(z.string()),
 		company: z.string(),
