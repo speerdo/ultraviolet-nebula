@@ -102,9 +102,12 @@ import HeaderLink from './HeaderLink.astro';
 	.social-links a {
 		display: flex;
 	}
-	@media (max-width: 720px) {
+	@media screen and (max-width: 720px) {
 		.social-links {
 			display: none;
+		}
+		nav {
+			font-size: .85rem;
 		}
 	}
 </style>

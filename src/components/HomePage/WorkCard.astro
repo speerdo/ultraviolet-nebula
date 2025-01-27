@@ -4,16 +4,22 @@ const { project } = Astro.props;
 
 <div class="project-card">
   <div class="image-wrapper">
-    <div class="image-container" style={`background-image: url(${project.image})`}>
-    </div>
-    <div class="image-overlay"></div>
+    <a href={project.link}>
+      <div class="image-container" style={`background-image: url(${project.image})`}>
+      </div>
+      <div class="image-overlay"></div>
+    </a>
   </div>
+  
   <div class="card-content">
-    <h3 class="project-title uppercase">{project.title}</h3>
     <a
       href={project.link}
-      target="_blank"
-      rel="noopener noreferrer"
+      class="project-title"
+    >
+      {project.title}
+    </a>
+    <a
+      href={project.link}
       class="project-link"
     >
       View Project →

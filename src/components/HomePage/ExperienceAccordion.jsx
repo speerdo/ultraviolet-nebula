@@ -40,23 +40,23 @@ function ExperienceAccordion({ experiences }) {
                   className="overflow-hidden bg-gray-900"
                 >
                   <div className="p-4 text-gray-100">
-                    <h3 className="mb-2">{experience.title}</h3>
+                    <h3 className="mb-4 mt-4">{experience.title}</h3>
                     
-                    <p className="mb-2">{experience.description}</p>
-                    <div className="flex justify-start">                      
+                    <p className="mb-8">{experience.description}</p>
+                    <div className="flex justify-start mb-8">                      
                       <img
                         src={experience.image}
                         alt={experience.title}
-                        className="w-1/4 h-auto mb-4 rounded"
+                        className="w-1/4 h-auto rounded"
                       />
                     </div>
                     <a
                       href={experience.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-indigo-400 hover:underline"
+                      className="company-link"
                     >
-                      View Details
+                      Company Website
                     </a>
                   </div>
                 </motion.div>

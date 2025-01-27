@@ -133,7 +133,7 @@ const nextWork = sortedWork[currentIndex + 1] || sortedWork[0]; // Loop back to 
 	}
 
 	/* Desktop layout */
-	@media (min-width: 768px) {
+	@media screen and (min-width: 768px) {
 		.images-container {
 			flex-direction: row;
 			align-items: center;
@@ -237,9 +237,10 @@ const nextWork = sortedWork[currentIndex + 1] || sortedWork[0]; // Loop back to 
 		font-weight: 500;
 	}
 
-	@media screen and (max-width: 720px) {
+	@media screen and (max-width: 768px) {
 		.work-post {
 			margin: 7rem auto 0;
 		}
+
 	}
 </style> 

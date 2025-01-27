@@ -1,11 +1,10 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+import Layout from '../layouts/Contact.astro';
 ---
 
 <Layout
 	title="Contact Me"
 	description="Get in touch with me"
-	pubDate={new Date('August 08 2021')}
 	heroImage="/images/adamspeer_og.png"
 >
 	<div class="contact-container">
@@ -135,7 +134,7 @@ import Layout from '../layouts/BlogPost.astro';
 	}
 
 	/* Tablet and up */
-	@media (min-width: 768px) {
+	@media screen and (min-width: 768px) {
 		.contact-container {
 			max-width: 1000px;
 			padding: 1rem;
@@ -154,13 +153,13 @@ import Layout from '../layouts/BlogPost.astro';
 	}
 
 	/* Desktop */
-	@media (min-width: 1024px) {
+	@media screen and (min-width: 1024px) {
 		.contact-container {
 			padding: 1rem;
 		}
 	}
 
-	@media (max-width: 600px) {
+	@media screen and (max-width: 600px) {
 		.prose {
 			width: 100% !important; 
 		}
