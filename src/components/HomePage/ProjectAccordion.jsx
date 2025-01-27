@@ -20,7 +20,7 @@ function ProjectAccordion({ projects }) {
             >
               <h3 className="font-bold text-xl">{project.title}</h3>
               <span className="ml-2 text-sm text-gray-300">
-                {isOpen ? '−' : '+'}
+                {isOpen ? '-' : '+'}
               </span>
             </button>
 

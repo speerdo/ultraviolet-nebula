@@ -2,7 +2,7 @@
 title: "Viewfinder Media"
 description: "A showcase of my work and experience."
 pubDate: "2023-06-15"
-heroImage: "/public/viewfinder.png"
+heroImage: "/images/viewfinder.png"
 projectUrl: "https://viewfinder.media"
 technologies: 
   - "React"

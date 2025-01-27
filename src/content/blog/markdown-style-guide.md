@@ -2,7 +2,7 @@
 title: 'Navigating the job market in 2025'
 description: 'Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.'
 pubDate: 'Jan 24 2025'
-heroImage: '/workfromhome.webp'
+heroImage: '/images/workfromhome.webp'
 ---
 
 Let’s be real—the job market can be daunting, especially when you're navigating it in a competitive and uncertain environment. It’s easy to feel overwhelmed, anxious, or stuck when you’re applying for roles, tweaking resumes, and waiting for responses that don’t always come. But I’ve realized something important: this is also a time to focus on growth, creativity, and exploring new opportunities. While I’m on the hunt for my next full-time role, I’ve decided to channel my energy into projects that not only keep me sharp but also allow me to share what I love with the world.

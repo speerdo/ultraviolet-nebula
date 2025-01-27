@@ -2,7 +2,7 @@
 title: 'Why am I blogging?'
 description: 'Welcome to my blog at AdamSpeerWeb.Dev!'
 pubDate: 'Jan 26 2025'
-heroImage: '/public/what.jpg'
+heroImage: '/images/what.jpg'
 ---
 
 Hey there! Welcome to my corner of the internet, where I plan to share all the things that make life exciting, challenging, and sometimes downright hilarious. Whether you’re here for updates on my work, musings about coding and AI, or you just stumbled in while looking for cat videos, I’m glad you’re here. Think of this blog as a mixed bag of insights, creativity, and the occasional taco reference. So, grab a coffee (or your beverage of choice) and let’s dive in.

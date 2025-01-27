@@ -2,7 +2,7 @@
 title: "Salesforce.org Nonprofit Cloud"
 description: "Developed features and improvements for Salesforce.org's Nonprofit Cloud platform."
 pubDate: "2023-01-10"
-heroImage: "/public/sfdo.png"
+heroImage: "/images/sfdo.png"
 projectUrl: "https://www.salesforce.com/nonprofit/"
 technologies: 
   - "Lightning Web Components"

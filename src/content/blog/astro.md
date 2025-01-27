@@ -2,7 +2,7 @@
 title: 'Astro.js: the best choice for content sites'
 description: 'Why I chose Astro.js to build this site'
 pubDate: 'Jan 25 2025'
-heroImage: '/public/astro.webp'
+heroImage: '/images/astro.webp'
 ---
 
 Welcome to my blog, powered by the magic of Astro.js! If you’re not familiar, Astro is a modern framework for building super-fast, content-focused websites, and I can’t stop raving about it. When I set out to create this site, I wanted something that combined speed, simplicity, and flexibility. Astro checked all the boxes and then some, making it the perfect choice for this little corner of the internet.

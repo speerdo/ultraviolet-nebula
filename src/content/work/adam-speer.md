@@ -2,7 +2,7 @@
 title: "Adam Speer Web Dev"
 description: "A custom blog platform powered by Node.js and MongoDB."
 pubDate: "2023-05-01"
-heroImage: "/public/adamspeerwebdev.png"
+heroImage: "/images/adamspeerwebdev.png"
 projectUrl: "https://adamspeerweb.dev"
 technologies: 
   - "Astro"
