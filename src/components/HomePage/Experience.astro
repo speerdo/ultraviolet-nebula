@@ -1,51 +1,46 @@
 ---
 import ExperienceAccordion from './ExperienceAccordion.jsx';
 
-import LillyLogo from '/public/lilly_logo.svg';
-import SalesforceLogo from '/public/salesforce-with-type-logo.svg';
-import ProsperLogo from '/public/PG-Logo-2023-white.svg';
-
-
 // Keep your experiences list in Astro frontmatter
 const experiences = [
-{
+  {
     company: 'Apex Systems (Eli Lilly and Company)',
     dates: 'April 2023 - Jan 2025',
     title: 'Full Stack Developer | Digital Design Lead',
-    description: 'Led the redesign and migration of the Mounjaro US website from Nuxt.js to Next.js. Built and maintained full-stack applications using React, Node.js, and AWS.',
-    image: LillyLogo.src,
-    link: 'https://mounjaro.lilly.com',
+    description: 'Led the redesign and migration of the Mounjaro US website from Nuxt.js to Next.js. Built and maintained complex feature requests and integrations. Served as a consultant for cross functional teams.',
+    image: '/images/lilly_logo.svg',
+    link: 'https://lilly.com',
   },
   {
     company: 'Salesforce',
     dates: 'June 2021 - Jan 2023',
     title: 'Associate Software Engineer',
-    description: 'Developed applications for Salesforce.org and integrated third-party APIs. Automated accessibility testing, improving compliance across Salesforce products.',
-    image: SalesforceLogo.src,
+    description: 'Developed features for Salesforce.org and integrated third-party APIs. Automated accessibility testing, improving compliance across Salesforce products. Served as Scrum Master for the SFDO team.',
+    image: '/images/salesforce-with-type-logo.svg',
     link: 'https://salesforce.com',
   },
   {
     company: 'JDR Web Solutions',
     dates: 'June 2019 - June 2021',
     title: 'PHP/Web Developer',
-    description: 'Specialized in WordPress development, creating custom themes and ensuring browser compatibility. Improved team workflows through task management optimization.',
-    image: '/public/jdr-logo.png',
+    description: 'Specialized in vanilla JavaScript and PHP, creating custom themes and ensuring browser compatibility. Created custom WordPress sites for a number of clients. Improved team workflows through task management optimization.',
+    image: '/images/jdr-logo.png',
     link: 'https://jdrweb.com',
   },
   {
     company: 'Prosper Group LLC',
     dates: 'Jan 2018 - June 2019',
     title: 'Web Developer',
-    description: 'Designed and developed responsive political and corporate websites. Built custom plugins and collaborated with designers to implement pixel-perfect designs.',
-    image: ProsperLogo.src,
+    description: 'Designed and developed responsive campaign and corporate websites. Built custom plugins and collaborated with designers to implement pixel-perfect designs. Served as a consultant for cross functional teams.',
+    image: '/images/PG-Logo-2023-white.svg',
     link: 'https://www.prospergroupcorp.com/',
   },
   {
     company: 'Freelance Web Developer',
     dates: 'Jan 2017 - Present',
     title: 'Web Developer',
-    description: 'Created websites, managed complex data, and provided custom solutions for diverse clients. Delivered full-service web solutions tailored to specific needs.',
-    image: '/public/AS_WHT.png',
+    description: 'Created websites, managed complex data, and provided custom solutions for diverse clients. Delivered full-service web solutions tailored to specific needs. Served as a consultant for many clients and built custom solutions in many web technologies.',
+    image: '/images/AS_WHT.png',
     link: 'https://adamspeerweb.dev',
   },
 ];

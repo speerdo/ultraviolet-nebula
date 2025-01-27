@@ -22,6 +22,7 @@ html {
 	--accent-dark: #7c3aed; /* Darker purple accent */
 	--black: 1, 1, 1;
 	--black-light: 27, 21, 17;
+	--white: #f8fafc;
 	--gray: 96, 115, 159;
 	--gray-light: 229, 233, 240;
 	--gray-dark: 34, 41, 57;
@@ -113,7 +114,7 @@ b {
 	font-weight: 700;
 }
 a {
-	color: var(--accent);
+	color: var(--white);
 }
 a:hover {
 	color: var(--accent);
@@ -160,12 +161,9 @@ hr {
 	border: none;
 	border-top: 1px solid rgb(var(--gray-light));
 }
-@media (max-width: 720px) {
+@media screen and (max-width: 720px) {
 	body {
 		font-size: 18px;
-	}
-	main {
-		padding: 1em;
 	}
 }
 
@@ -194,3 +192,10 @@ hr {
 	font-size: 2rem;
 }
 
+.company-link {
+	color: var(--accent);
+
+}
+.company-link:hover {
+	color: var(--accent-dark);
+}

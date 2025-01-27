@@ -1,25 +1,43 @@
 ---
-import ProjectCard from './ProjectCard.astro';
+import WorkCard from './WorkCard.astro';
 
 // Keep your projects list in Astro frontmatter
 const projects = [
   {
-    title: 'Portfolio Website',
+    title: 'Viewfinder Media',
     description: 'A showcase of my work and experience.',
-    image: '/public/blog-placeholder-1.jpg',
-    link: 'https://example.com/portfolio',
+    image: '/images/viewfinder.png',
+    link: '/work/viewfinder',
   },
   {
-    title: 'E-Commerce App',
+    title: 'Advanced Agrilytics',
     description: 'A fully functional e-commerce platform with React.',
-    image: '/public/blog-placeholder-2.jpg',
-    link: 'https://example.com/ecommerce',
+    image: '/images/adag.png',
+    link: '/work/advanced-agrilytics',
   },
   {
-    title: 'Blog CMS',
+    title: 'Mounjaro (Eli Lilly)',
     description: 'A custom blog platform powered by Node.js and MongoDB.',
-    image: '/public/blog-placeholder-3.jpg',
-    link: 'https://example.com/blog',
+    image: '/images/mounjaro.png',
+    link: '/work/mounjaro',
+  },
+  {
+    title: 'Salesforce.org',
+    description: 'A showcase of my work and experience.',
+    image: '/images/sfdo.png',
+    link: '/work/salesforce',
+  },
+  {
+    title: 'Indiana Agriculture Nutrient Alliance',
+    description: 'A fully functional e-commerce platform with React.',
+    image: '/images/iana.png',
+    link: '/work/iana',
+  },
+  {
+    title: 'Adam Speer Web Dev',
+    description: 'A custom blog platform powered by Node.js and MongoDB.',
+    image: '/images/adamspeerwebdev.png',
+    link: '/work/adam-speer',
   },
 ];
 ---
@@ -28,7 +46,7 @@ const projects = [
   <h2 class="section-title">My Work</h2>
   <div class="projects-grid">
     {projects.map((project) => (
-      <ProjectCard project={project} />
+      <WorkCard project={project} />
     ))}
   </div>
 </section>

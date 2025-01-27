@@ -13,11 +13,11 @@
           </span>
           Full Stack Dev
         </h3>
-        <h4 class="expertise-item-subtitle">Next.js | Nuxt.js | Astro.js | Node.js</h4>
+        <h4 class="expertise-item-subtitle">Next.js | Nuxt.js | Astro.js | Node.js | PHP</h4>
         <p class="expertise-item-description">
           Experienced in building scalable web applications using modern frameworks like Next.js, Nuxt.js,
-          and Node.js. Proficient in creating secure backends with PHP frameworks and leveraging Astro.js
-          for lightweight, performant frontends.
+          and Astro.js. Proficient in creating multiple types of full stack applications with different 
+          technologies depending on the project.
         </p>
       </div>
       <div class="expertise-item">
@@ -31,7 +31,7 @@
         <h4 class="expertise-item-subtitle">React | Vue.js | TypeScript | Tailwind CSS</h4>
         <p class="expertise-item-description">
           Specialized in crafting responsive user interfaces with React, Vue.js, and TypeScript. Skilled in
-          using CSS for efficient styling and delivering cross-browser, accessible experiences.
+          using modern CSS for efficient styling and delivering cross-browser, accessible experiences.
         </p>
       </div>
       <div class="expertise-item">
@@ -41,12 +41,12 @@
               <path d="M18,34.111l-1.667,6.667L14.111,43H31.889l-2.222-2.222L28,34.111M3,25.222H43M7.444,34.111H38.556A4.444,4.444,0,0,0,43,29.667V7.444A4.444,4.444,0,0,0,38.556,3H7.444A4.444,4.444,0,0,0,3,7.444V29.667A4.444,4.444,0,0,0,7.444,34.111Z" transform="translate(-2 -2)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
             </svg>
           </span>
-          Software Engineer
+          CMS Integration
         </h3>
-        <h4 class="expertise-item-subtitle">PHP | Python | Rust</h4>
+        <h4 class="expertise-item-subtitle">WordPress | Contentful | Sanity.io</h4>
         <p class="expertise-item-description">
-          Versatile in PHP, Python, and Rust for developing secure, scalable, and high-performance software.
-          Skilled in CI/CD workflows, unit testing, and writing maintainable, production-quality code.
+          Skilled in integrating content management systems like WordPress, among many others, to 
+          create flexible and scalable web applications for clients with complex content needs.
         </p>
       </div>
       
@@ -55,65 +55,151 @@
 </section>
 
 <style>
-.expertise-section {
-  width: 100%;
-  margin: 0 auto;
-  padding: 4rem 0;
-  text-align: center;
-}
+  .expertise-section {
+    width: 100%;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    text-align: center;
+  }
 
-.expertise-container {
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
-}
+  .expertise-container {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
 
-.expertise-title {
-  font-size: 4rem;
-  font-weight: 400;
-  margin: 0 0 3rem 0;
-}
+  .expertise-title {
+    font-size: 3rem;
+    font-weight: 400;
+    margin: 0 0 2rem 0;
+  }
 
-.expertise-grid {
-  max-width: 75%;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-}
+  .expertise-grid {
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
 
-.expertise-item {
-  border: 1px solid #f8fafc;
-  text-align: left;
-  background-color: transparent;
-  padding: 2rem;
-}
+  .expertise-item {
+    border: 1px solid #f8fafc;
+    text-align: left;
+    background-color: transparent;
+    padding: 1.5rem;    
+    transition: all 0.3s ease;
+    border-radius: 8px;
+  }
 
-.expertise-item-title {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  font-size: 2.5rem;
-  margin: 0;
-}
+  .expertise-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
 
-.icon-box-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  margin: 0;
-}
+  .expertise-item-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.8rem;
+    margin: 0;
+  }
 
-.expertise-item-subtitle {
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: #f8fafc;
-  margin: 0.5rem 0;
-}
+  .icon-box-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    margin: 0;
+  }
 
-.expertise-item-description {
-  margin-top: 1rem;
-}
+  .expertise-item-subtitle {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #f8fafc;
+    margin: 0.5rem 0;
+  }
+
+  .expertise-item-description {
+    margin-top: 1rem;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* Tablet Styles */
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .expertise-section {
+      padding: 4rem 2rem;
+    }
+
+    .expertise-title {
+      font-size: 3.5rem;
+    }
+
+    .expertise-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      max-width: 90%;
+    }
+
+    .expertise-item-title {
+      font-size: 2rem;
+    }
+
+    .expertise-item-subtitle {
+      font-size: 1.3rem;
+    }
+  }
+
+  /* Desktop Styles */
+  @media screen and (min-width: 1024px) {
+    .expertise-section {
+      padding: 4rem 0;
+    }
+
+    .expertise-title {
+      font-size: 4rem;
+      margin: 0 0 3rem 0;
+    }
+
+    .expertise-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      max-width: 75%;
+    }
+
+    .expertise-item {      
+      padding: 2rem;
+      border-radius: 0;
+    }
+
+    .expertise-item-title {
+      font-size: 2.5rem;
+    }
+
+    .icon-box-icon {
+      width: 42px;
+      height: 42px;
+    }
+
+    .expertise-item-subtitle {
+      font-size: 1.5rem;
+    }
+
+    .expertise-item-description {
+      font-size: 1.1rem;
+    }
+  }
+
+  /* Large Desktop */
+  @media screen and (min-width: 1440px) {
+    .expertise-grid {
+      max-width: 70%;
+    }
+
+    .expertise-item {
+      padding: 2.5rem;
+    }
+  }
 </style>

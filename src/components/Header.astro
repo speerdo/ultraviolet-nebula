@@ -7,7 +7,7 @@ import HeaderLink from './HeaderLink.astro';
 	<nav>
 		<div class="logo-container">
 			<a href="/" class="logo-link">
-				<img src="/AS_WHT.png" alt="Site Logo" class="logo" />
+				<img src="/images/AS_WHT.png" alt="Site Logo" class="logo" />
 			</a>
 		</div>
 		<div class="internal-links">
@@ -102,9 +102,12 @@ import HeaderLink from './HeaderLink.astro';
 	.social-links a {
 		display: flex;
 	}
-	@media (max-width: 720px) {
+	@media screen and (max-width: 720px) {
 		.social-links {
 			display: none;
+		}
+		nav {
+			font-size: .85rem;
 		}
 	}
 </style>
