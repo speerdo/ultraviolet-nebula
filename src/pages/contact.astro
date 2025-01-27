@@ -6,7 +6,7 @@ import Layout from '../layouts/BlogPost.astro';
 	title="Contact Me"
 	description="Get in touch with me"
 	pubDate={new Date('August 08 2021')}
-	heroImage="/images/adamspeer_desktop.png"
+	heroImage="/images/adamspeer_og.png"
 >
 	<div class="contact-container">
 		<div class="contact-info">
@@ -55,13 +55,13 @@ import Layout from '../layouts/BlogPost.astro';
 	.contact-container {
 		max-width: 1000px;
 		margin: 0 auto;
-		padding: 2rem;
+		padding: 1rem;
 		display: grid;
-		gap: 3rem;
+		gap: 2rem;
 	}
 
 	.contact-info {
-		padding: 1rem;
+		padding: 0;
 	}
 
 	.contact-info h2 {
@@ -134,10 +134,35 @@ import Layout from '../layouts/BlogPost.astro';
 		color: rgb(var(--purple-dark));
 	}
 
+	/* Tablet and up */
 	@media (min-width: 768px) {
 		.contact-container {
-			grid-template-columns: 1fr 2fr;
-			gap: 3rem;
+			max-width: 1000px;
+			padding: 1rem;
+			display: grid;
+			grid-template-columns: 2fr 2fr;
+			gap: 2rem;
+		}
+
+		.contact-info {
+			margin-bottom: 0;
+		}
+
+		button {
+			width: auto;
+		}
+	}
+
+	/* Desktop */
+	@media (min-width: 1024px) {
+		.contact-container {
+			padding: 1rem;
+		}
+	}
+
+	@media (max-width: 600px) {
+		.prose {
+			width: 100% !important; 
 		}
 	}
 </style>

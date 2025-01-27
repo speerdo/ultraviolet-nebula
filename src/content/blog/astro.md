@@ -5,7 +5,7 @@ pubDate: 'Jan 25 2025'
 heroImage: '/images/astro.webp'
 ---
 
-Welcome to my blog, powered by the magic of Astro.js! If you’re not familiar, Astro is a modern framework for building super-fast, content-focused websites, and I can’t stop raving about it. When I set out to create this site, I wanted something that combined speed, simplicity, and flexibility. Astro checked all the boxes and then some, making it the perfect choice for this little corner of the internet.
+Welcome to my blog, powered by the magic of Astro.js! If you’re not familiar, Astro is a modern framework for building super-fast, content-focused websites, and I can’t stop raving about it. When I set out to create this site, I wanted something that combined speed, simplicity, and flexibility. Astro checked all the boxes and then some, making it the perfect choice for my specific needs.
 
 One of the main reasons I love Astro.js is how incredibly lightweight it is. Astro only loads the JavaScript you need, when you need it, which means blazing-fast page loads without sacrificing functionality. For a site like this, where content is king, Astro lets me focus on what really matters: delivering a great experience to visitors like you. Plus, the simplicity of the framework makes it a joy to work with, even when juggling all the bells and whistles I wanted to include.
 

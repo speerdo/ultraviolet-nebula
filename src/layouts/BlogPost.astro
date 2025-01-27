@@ -51,6 +51,12 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			.last-updated-on {
 				font-style: italic;
 			}
+
+			@media screen and (max-width: 720px) {
+				.blog-post {
+					margin: 7rem auto 0;
+				}
+			}
 		</style>
 	</head>
 

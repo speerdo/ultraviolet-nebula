@@ -1,26 +1,29 @@
 ---
 title: "Advanced Agrilytics"
-description: "A fully functional e-commerce platform with React."
-pubDate: "2023-03-20"
+description: "A fully functional content site with WordPress."
+pubDate: "2024-01-01"
 heroImage: "/images/adag_desktop.png"
 mobileImage: "/images/adag.png"
 projectUrl: "https://advancedagrilytics.com/"
 technologies: 
-  - "React"
-  - "Node.js"
-  - "Express"
-  - "MongoDB"
-  - "AWS"
+  - "WordPress"
+  - "JavaScript"
+  - "PHP"
+  - "CSS"
+  - "HTML"
+  - "WP Engine"
 company: "Advanced Agrilytics"
 ---
 
 ## Project Overview
 
-Advanced Agrilytics platform serves as a comprehensive agricultural technology solution, combining e-commerce capabilities with precision farming tools.
+Advanced Agrilytics platform serves as a comprehensive agricultural technology research organization, providing Indiana farmers with precision data and insights.
 
 ### Responsibilities
 
-- Built robust e-commerce functionality
-- Integrated payment processing systems
+- Built robust content site with WordPress
+- Integrated custom APIs
 - Developed user authentication and authorization
-- Implemented responsive design patterns 
+- Implemented responsive design patterns
+- Optimized for performance and accessibility
+- Met client's expectations for time and cost

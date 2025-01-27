@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -17,6 +18,12 @@ interface Props {
 };
 
 const { title, description, pubDate, updatedDate, heroImage, mobileImage, projectUrl, technologies } = Astro.props;
+
+// Get all work items and find the next one
+const allWork = await getCollection('work');
+const sortedWork = allWork.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const currentIndex = sortedWork.findIndex(post => post.data.title === title);
+const nextWork = sortedWork[currentIndex + 1] || sortedWork[0]; // Loop back to first if at end
 ---
 
 <html lang="en">
@@ -63,6 +70,14 @@ const { title, description, pubDate, updatedDate, heroImage, mobileImage, projec
 					<slot />
 				</div>
 			</article>
+			
+			<div class="next-project">
+				<div class="next-label mb-4">Next Project</div>
+				<a href={`/work/${nextWork.slug}`} class="next-project-link">
+					
+					<span class="next-title">{nextWork.data.title} →</span>
+				</a>
+			</div>
 		</main>
 		<Footer />
 	</body>
@@ -83,15 +98,18 @@ const { title, description, pubDate, updatedDate, heroImage, mobileImage, projec
 		padding: 0 1rem;
 		flex-direction: column-reverse;
 	}
+
 	.mobile-image, .hero-image {
 		transition: all 0.3s ease;
 		position: relative;
 		z-index: 1;
 	}
+
 	.mobile-image:hover, .hero-image:hover {
 		transform: scale(1.05);
 		z-index: 2;
 	}
+
 	.mobile-image {
 		width: 100%;
 		display: flex;
@@ -178,7 +196,50 @@ const { title, description, pubDate, updatedDate, heroImage, mobileImage, projec
 	}
 	.project-link:hover {
 		background: var(--accent);
-		color: var(--white);
+		color: rgb(var(--purple-dark));
 		transform: translateY(-2px);
+	}
+
+	.next-project {
+		margin: 4rem auto;
+		text-align: center;
+		max-width: 720px;
+		padding: 0 1em;
+	}
+
+	.next-project-link {
+		display: inline-flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		text-decoration: none;
+		color: var(--white);
+		padding: 1.5rem 2rem;
+		background: var(--accent-dark);
+		border-radius: 8px;
+		transition: all 0.3s ease;
+	}
+
+	.next-project-link:hover {
+		color: rgb(var(--purple-dark));
+		background: var(--accent);
+		transform: translateY(-2px);
+	}
+
+	.next-label {
+		font-size: 0.9rem;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: var(--gray-200);
+	}
+
+	.next-title {
+		font-size: 1.2rem;
+		font-weight: 500;
+	}
+
+	@media screen and (max-width: 720px) {
+		.work-post {
+			margin: 7rem auto 0;
+		}
 	}
 </style> 

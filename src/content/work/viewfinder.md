@@ -1,16 +1,16 @@
 ---
 title: "Viewfinder Media"
 description: "A showcase of my work and experience."
-pubDate: "2023-06-15"
+pubDate: "2021-06-15"
 heroImage: "/images/viewfinder_desktop.png"
 mobileImage: "/images/viewfinder.png"
 projectUrl: "https://viewfinder.media"
 technologies: 
-  - "React"
-  - "Next.js"
-  - "TypeScript"
-  - "Tailwind CSS"
-  - "Vercel"
+  - "WordPress"
+  - "JavaScript"
+  - "PHP"
+  - "CSS"
+  - "HTML"
 company: "Viewfinder Media"
 ---
 

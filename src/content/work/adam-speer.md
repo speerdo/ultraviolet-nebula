@@ -1,7 +1,7 @@
 ---
 title: "Adam Speer Web Dev"
-description: "A custom blog platform powered by Node.js and MongoDB."
-pubDate: "2023-05-01"
+description: "A custom blog platform powered by Astro.js and Vercel."
+pubDate: "2024-01-27"
 heroImage: "/images/adamspeer_desktop.png"
 mobileImage: "/images/adamspeerwebdev.png"
 projectUrl: "https://adamspeerweb.dev"
@@ -23,4 +23,5 @@ Personal portfolio and blog platform showcasing web development projects and tec
 - Designed and developed the entire platform
 - Implemented JAMstack architecture
 - Created technical blog content
-- Optimized for performance and accessibility 
+- Optimized for performance and accessibility
+- Used simple form integration with Web3Forms
