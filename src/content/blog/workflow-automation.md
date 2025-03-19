@@ -8,7 +8,7 @@ heroImage: '/images/was_og.png'
 ​In today's fast-paced business environment, efficiency isn't just an advantage—it's a necessity. Recognizing this imperative, we're excited to introduce Workflow Automation Strategies, a company committed to transforming the way businesses operate through intelligent automation.​
 
 ## Our Vision
-At Workflow Automation Strategies, our vision is clear: empower businesses to streamline their processes, enhance productivity, and achieve sustainable growth by harnessing the power of automation. We understand that in order to stay competitive, organizations must adapt and innovate continually. Our mission is to be the catalyst for that transformation.​
+At [Workflow Automation Strategies](https://www.workflowautomationstrategies.com), our vision is clear: empower businesses to streamline their processes, enhance productivity, and achieve sustainable growth by harnessing the power of automation. We understand that in order to stay competitive, organizations must adapt and innovate continually. Our mission is to be the catalyst for that transformation.​
 
 ### Comprehensive Solutions Tailored to Your Needs
 We offer a suite of services designed to address the unique challenges faced by modern businesses:​
