@@ -1,7 +1,7 @@
 ---
 title: "Adam Speer Web Dev"
 description: "A custom blog platform powered by Astro.js and Vercel."
-pubDate: "2024-01-27"
+pubDate: "2025-01-27"
 heroImage: "/images/adamspeer_desktop.png"
 mobileImage: "/images/adamspeerwebdev.png"
 projectUrl: "https://adamspeerweb.dev"

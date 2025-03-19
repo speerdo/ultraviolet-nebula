@@ -114,10 +114,10 @@ b {
 	font-weight: 700;
 }
 a {
-	color: var(--white);
+	color: var(--accent);
 }
 a:hover {
-	color: var(--accent);
+	color: var(--accent-dark);
 }
 p {
 	margin-bottom: 1em;
