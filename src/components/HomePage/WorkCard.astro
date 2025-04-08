@@ -5,43 +5,39 @@ const { project } = Astro.props;
 <div class="project-card">
   <div class="image-wrapper">
     <a href={project.link}>
-      <div class="image-container" style={`background-image: url(${project.image})`}>
+      <div
+        class="image-container"
+        style={`background-image: url(${project.image})`}
+      >
       </div>
       <div class="image-overlay"></div>
     </a>
   </div>
-  
+
   <div class="card-content">
     <h3>
-      <a
-        href={project.link}
-        class="project-title"
-      >
+      <a href={project.link} class="project-title">
         {project.title}
       </a>
-    </h3>    
-    <a
-      href={project.link}
-      class="project-link"
-    >
-      View Project →
-    </a>
+    </h3>
+    <a href={project.link} class="project-link"> View Project → </a>
   </div>
 </div>
 
 <style>
   .project-card .card-content .project-link {
     font-size: 1.2rem;
-  } 
+  }
 
   .project-card .card-content .project-title {
     font-size: 2.2rem;
-  } 
-
+  }
 
   .project-card {
     @apply w-80 rounded-lg shadow-lg overflow-hidden bg-gray-900;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
   }
 
   .project-card:hover {
@@ -71,7 +67,7 @@ const { project } = Astro.props;
   .project-card:hover .image-overlay {
     @apply bg-opacity-30;
   }
-  
+
   .card-content {
     @apply flex flex-col justify-between;
     padding: 2rem 1.5rem;
