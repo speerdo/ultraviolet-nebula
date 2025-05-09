@@ -1,49 +1,55 @@
 ---
-import WorkCard from './WorkCard.astro';
+import WorkCard from "./WorkCard.astro";
 
 // Keep your projects list in Astro frontmatter
 const projects = [
   {
-    title: 'Viewfinder Media',
-    description: 'A showcase of my work and experience.',
-    image: '/images/viewfinder.png',
-    link: '/work/viewfinder',
+    title: "RecycleOldTech",
+    description: "A nationwide US Directory of E-Waste recycling centers",
+    image: "/images/recycleoldtech_mobile.png",
+    link: "/work/recycle-old-tech",
   },
   {
-    title: 'Workflow Automation Strategies',
-    description: 'A custom blog platform powered by Node.js and MongoDB.',
-    image: '/images/was-mobile.png',
-    link: '/work/workflow-automation-strategies',
+    title: "Viewfinder Media",
+    description: "A showcase of my work and experience.",
+    image: "/images/viewfinder.png",
+    link: "/work/viewfinder",
   },
   {
-    title: 'Mounjaro (Eli Lilly)',
-    description: 'A custom blog platform powered by Node.js and MongoDB.',
-    image: '/images/mounjaro.png',
-    link: '/work/mounjaro',
+    title: "Workflow Automation Strategies",
+    description: "A custom blog platform powered by Node.js and MongoDB.",
+    image: "/images/was-mobile.png",
+    link: "/work/workflow-automation-strategies",
   },
   {
-    title: 'Salesforce.org',
-    description: 'A showcase of my work and experience.',
-    image: '/images/sfdo.png',
-    link: '/work/salesforce',
+    title: "Mounjaro (Eli Lilly)",
+    description: "A custom blog platform powered by Node.js and MongoDB.",
+    image: "/images/mounjaro.png",
+    link: "/work/mounjaro",
   },
   {
-    title: 'Indiana Agriculture Nutrient Alliance',
-    description: 'A fully functional e-commerce platform with React.',
-    image: '/images/iana.png',
-    link: '/work/iana',
+    title: "Salesforce.org",
+    description: "A showcase of my work and experience.",
+    image: "/images/sfdo.png",
+    link: "/work/salesforce",
   },
   {
-    title: 'Advanced Agrilytics',
-    description: 'A fully functional e-commerce platform with React.',
-    image: '/images/adag.png',
-    link: '/work/advanced-agrilytics',
+    title: "Indiana Agriculture Nutrient Alliance",
+    description: "A fully functional e-commerce platform with React.",
+    image: "/images/iana.png",
+    link: "/work/iana",
   },
   {
-    title: 'Adam Speer Web Dev',
-    description: 'A custom blog platform powered by Node.js and MongoDB.',
-    image: '/images/adamspeerwebdev.png',
-    link: '/work/adam-speer',
+    title: "Advanced Agrilytics",
+    description: "A fully functional e-commerce platform with React.",
+    image: "/images/adag.png",
+    link: "/work/advanced-agrilytics",
+  },
+  {
+    title: "Adam Speer Web Dev",
+    description: "A custom blog platform powered by Node.js and MongoDB.",
+    image: "/images/adamspeerwebdev.png",
+    link: "/work/adam-speer",
   },
 ];
 ---
@@ -51,9 +57,7 @@ const projects = [
 <section id="work" class="work-section">
   <h2 class="section-title">My Work</h2>
   <div class="projects-grid">
-    {projects.map((project) => (
-      <WorkCard project={project} />
-    ))}
+    {projects.map((project) => <WorkCard project={project} />)}
   </div>
 </section>
 
