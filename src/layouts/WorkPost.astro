@@ -1,246 +1,390 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import { getCollection } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
 interface Props {
-	title: string;
-	description: string;
-	pubDate: Date;
-	updatedDate?: Date;
-	heroImage?: string;
-	mobileImage?: string;
-	projectUrl: string;
-	technologies: string[];
-	company: string;
-};
+  title: string;
+  description: string;
+  pubDate: Date;
+  updatedDate?: Date;
+  heroImage?: string;
+  mobileImage?: string;
+  projectUrl: string;
+  technologies: string[];
+  company: string;
+}
 
-const { title, description, pubDate, updatedDate, heroImage, mobileImage, projectUrl, technologies } = Astro.props;
+const {
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  heroImage,
+  mobileImage,
+  projectUrl,
+  technologies,
+} = Astro.props;
 
 // Get all work items and find the next one
-const allWork = await getCollection('work');
-const sortedWork = allWork.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-const currentIndex = sortedWork.findIndex(post => post.data.title === title);
+const allWork = await getCollection("work");
+const sortedWork = allWork.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+const currentIndex = sortedWork.findIndex((post) => post.data.title === title);
 const nextWork = sortedWork[currentIndex + 1] || sortedWork[0]; // Loop back to first if at end
 ---
 
 <html lang="en">
-	<head>
-		<BaseHead title={title} description={description} />
-	</head>
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
 
-	<body>
-		<Header />
-		<main class="work-post">
-			<article>
-				<div class="images-container">
-					<div class="mobile-image">
-						{mobileImage && <img width={375} height={667} src={mobileImage} alt={title} />}
-					</div>
-					<div class="hero-image">
-						{heroImage && <img width={1020} height={510} src={heroImage} alt={title} />}
-					</div>
-				</div>
-				
-				<div class="prose">
-					<div class="title">
-						<h1>{title}</h1>
-						<div class="date">
-							Project completed: <time>{pubDate.toLocaleDateString('en-us', { year: 'numeric', month: 'short' })}</time>
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <time>{updatedDate.toLocaleDateString('en-us', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
-									</div>
-								)
-							}
-						</div>
-						<div class="technologies">
-							<h3>Technologies Used:</h3>
-							<ul>
-								{technologies.map(tech => <li>{tech}</li>)}
-							</ul>
-						</div>
-						<a href={projectUrl} target="_blank" rel="noopener noreferrer" class="project-link">
-							View Live Project →
-						</a>
-					</div>
-					<slot />
-				</div>
-			</article>
-			
-			<div class="next-project">
-				<div class="next-label mb-4">Next Project</div>
-				<a href={`/work/${nextWork.slug}`} class="next-project-link">
-					
-					<span class="next-title">{nextWork.data.title} →</span>
-				</a>
-			</div>
-		</main>
-		<Footer />
-	</body>
+  <body>
+    <Header />
+    <main class="work-post">
+      <article>
+        <div class="images-container">
+          <div class="mobile-image">
+            {
+              mobileImage && (
+                <img width={375} height={667} src={mobileImage} alt={title} />
+              )
+            }
+          </div>
+          <div class="hero-image">
+            {
+              heroImage && (
+                <img width={1020} height={510} src={heroImage} alt={title} />
+              )
+            }
+          </div>
+        </div>
+
+        <div class="prose">
+          <div class="title">
+            <h1>{title}</h1>
+            <div class="date">
+              Project completed: <time
+                >{
+                  pubDate.toLocaleDateString("en-us", {
+                    year: "numeric",
+                    month: "short",
+                  })
+                }</time
+              >
+              {
+                updatedDate && (
+                  <div class="last-updated-on">
+                    Last updated on{" "}
+                    <time>
+                      {updatedDate.toLocaleDateString("en-us", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })}
+                    </time>
+                  </div>
+                )
+              }
+            </div>
+            <div class="technologies">
+              <h3>Technologies Used:</h3>
+              <ul>
+                {technologies.map((tech) => <li>{tech}</li>)}
+              </ul>
+            </div>
+            <a
+              href={projectUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-link"
+            >
+              View Live Project →
+            </a>
+          </div>
+          <slot />
+        </div>
+        <div class="next-project">
+          <div class="next-label mb-4">Next Project</div>
+          <a href={`/work/${nextWork.slug}`} class="next-project-link">
+            <span class="next-title">{nextWork.data.title} →</span>
+          </a>
+        </div>
+      </article>
+
+      <section class="work-cta">
+        <div class="work-cta-container">
+          <h2 class="section-title">Ready to Build Your Next Project?</h2>
+          <p class="work-cta-description">
+            Let's create something exceptional together. I bring technical
+            expertise and a track record of delivering successful web solutions.
+          </p>
+          <a href="/contact" class="work-cta-button">Start a Conversation →</a>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
 </html>
 
 <style>
-	.work-post {
-		width: 100%;
-		max-width: 100%;
-		margin: 10rem auto 0;
-	}
-	.images-container {
-		width: 100%;
-		max-width: 1200px;
-		margin: 0 auto;
-		display: flex;
-		gap: 2rem;
-		padding: 0 1rem;
-		flex-direction: column-reverse;
-	}
+  .work-post {
+    width: 100%;
+    max-width: 100%;
+    margin: 10rem auto 0;
+  }
+  .images-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 2rem;
+    padding: 0 1rem;
+    flex-direction: column-reverse;
+  }
 
-	.mobile-image, .hero-image {
-		transition: all 0.3s ease;
-		position: relative;
-		z-index: 1;
-	}
+  .mobile-image,
+  .hero-image {
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+  }
 
-	.mobile-image:hover, .hero-image:hover {
-		transform: scale(1.05);
-		z-index: 2;
-	}
+  .mobile-image:hover,
+  .hero-image:hover {
+    transform: scale(1.05);
+    z-index: 2;
+  }
 
-	.mobile-image {
-		width: 100%;
-		display: flex;
-		justify-content: center;
-	}
-	.mobile-image img {
-		max-width: 375px;
-		height: auto;
-		border-radius: 12px;
-		box-shadow: var(--box-shadow);
-	}
-	.hero-image {
-		width: 100%;
-	}
-	.hero-image img {
-		display: block;
-		width: 100%;
-		height: auto;
-		border-radius: 12px;
-		box-shadow: var(--box-shadow);
-	}
+  .mobile-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .mobile-image img {
+    max-width: 375px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+  }
+  .hero-image {
+    width: 100%;
+  }
+  .hero-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+  }
 
-	/* Desktop layout */
-	@media screen and (min-width: 768px) {
-		.images-container {
-			flex-direction: row;
-			align-items: center;
-		}
-		.mobile-image {
-			width: 25%;
-		}
-		.hero-image {
-			width: 75%;
-		}
-	}
-	.prose {
-		width: 720px;
-		max-width: calc(100% - 2em);
-		margin: auto;
-		padding: 1em;
-		color: var(--white);
-	}
-	.title {
-		margin-bottom: 1em;
-		padding: 1em 0;
-		text-align: center;
-		line-height: 1;
-	}
-	.title h1 {
-		margin: 0 0 0.5em 0;
-	}
-	.date {
-		margin-bottom: 0.5em;
-		color: rgb(var(--gray));
-	}
-	.last-updated-on {
-		font-style: italic;
-	}
-	.technologies {
-		margin: 2em 0;
-	}
-	.technologies ul {
-		list-style: none;
-		padding: 0;
-		display: flex;
-		flex-wrap: wrap;
-		gap: 1em;
-		justify-content: center;
-	}
-	.technologies li {
-		background: rgba(var(--purple), 0.1);
-		padding: 0.5em 1em;
-		border-radius: 4px;
-		font-size: 0.9em;
-	}
-	.project-link {
-		display: inline-block;
-		text-decoration: none;
-		padding: 0.5em 1em;
-		background: var(--accent-dark);
-		border-radius: 4px;
-		color: var(--white);
-		transition: all 0.2s ease;
-	}
-	.project-link:hover {
-		background: var(--accent);
-		color: rgb(var(--purple-dark));
-		transform: translateY(-2px);
-	}
+  /* Desktop layout */
+  @media screen and (min-width: 768px) {
+    .images-container {
+      flex-direction: row;
+      align-items: center;
+    }
+    .mobile-image {
+      width: 25%;
+    }
+    .hero-image {
+      width: 75%;
+    }
+  }
+  .prose {
+    width: 720px;
+    max-width: calc(100% - 2em);
+    margin: auto;
+    padding: 1em;
+    color: var(--white);
+  }
+  .title {
+    margin-bottom: 1em;
+    padding: 1em 0;
+    text-align: center;
+    line-height: 1;
+  }
+  .title h1 {
+    margin: 0 0 0.5em 0;
+  }
+  .date {
+    margin-bottom: 0.5em;
+    color: rgb(var(--gray));
+  }
+  .last-updated-on {
+    font-style: italic;
+  }
+  .technologies {
+    margin: 2em 0;
+  }
+  .technologies ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+  }
+  .technologies li {
+    background: rgba(var(--purple), 0.1);
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    font-size: 0.9em;
+  }
+  .project-link {
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    background: var(--accent-dark);
+    border-radius: 4px;
+    color: var(--white);
+    transition: all 0.2s ease;
+  }
+  .project-link:hover {
+    background: var(--accent);
+    color: rgb(var(--purple-dark));
+    transform: translateY(-2px);
+  }
 
-	.next-project {
-		margin: 4rem auto;
-		text-align: center;
-		max-width: 720px;
-		padding: 0 1em;
-	}
+  .next-project {
+    margin: 4rem auto;
+    text-align: center;
+    max-width: 720px;
+    padding: 0 1em;
+  }
 
-	.next-project-link {
-		display: inline-flex;
-		flex-direction: column;
-		gap: 0.5rem;
-		text-decoration: none;
-		color: var(--white);
-		padding: 1.5rem 2rem;
-		background: var(--accent-dark);
-		border-radius: 8px;
-		transition: all 0.3s ease;
-	}
+  .next-project-link {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--white);
+    padding: 1.5rem 2rem;
+    background: var(--accent-dark);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
 
-	.next-project-link:hover {
-		color: rgb(var(--purple-dark));
-		background: var(--accent);
-		transform: translateY(-2px);
-	}
+  .next-project-link:hover {
+    color: rgb(var(--purple-dark));
+    background: var(--accent);
+    transform: translateY(-2px);
+  }
 
-	.next-label {
-		font-size: 0.9rem;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		color: var(--gray-200);
-	}
+  .next-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gray-200);
+  }
 
-	.next-title {
-		font-size: 1.2rem;
-		font-weight: 500;
-	}
+  .next-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
 
-	@media screen and (max-width: 768px) {
-		.work-post {
-			margin: 7rem auto 0;
-		}
+  @media screen and (max-width: 768px) {
+    .work-post {
+      margin: 7rem auto 0;
+    }
+  }
 
-	}
-</style> 
+  .work-cta {
+    width: 100%;
+    margin: 4rem auto;
+    padding: 6rem 1rem;
+    text-align: center;
+    background-color: transparent;
+  }
+
+  .work-cta-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    border: 1px solid #f8fafc;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .work-cta-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .section-title {
+    font-size: 3rem;
+    font-weight: 400;
+    margin: 0 0 2rem 0;
+    color: var(--white);
+  }
+
+  .work-cta-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 0 auto 2rem;
+    max-width: 600px;
+    color: #f8fafc;
+  }
+
+  .work-cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--white);
+    background-color: transparent;
+    border: 1px solid #f8fafc;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+
+  .work-cta-button:hover {
+    background-color: #f8fafc;
+    color: #1a1a1a;
+    transform: translateY(-2px);
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .work-cta {
+      padding: 4rem 2rem;
+    }
+
+    .section-title {
+      font-size: 3.5rem;
+    }
+
+    .work-cta-description {
+      font-size: 1.3rem;
+    }
+
+    .work-cta-button {
+      font-size: 1.3rem;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .work-cta {
+      padding: 6rem 0;
+    }
+
+    .section-title {
+      font-size: 4rem;
+    }
+
+    .work-cta-description {
+      font-size: 1.5rem;
+    }
+
+    .work-cta-button {
+      font-size: 1.4rem;
+      padding: 1.2rem 2.5rem;
+    }
+  }
+</style>

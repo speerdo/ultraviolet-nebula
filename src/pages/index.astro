@@ -47,6 +47,19 @@ import Experience from "../components/HomePage/Experience.astro";
         <Expertise />
         <Work />
         <Experience />
+        <section class="section cta-section">
+          <div class="cta-container">
+            <h2 class="section-title">
+              Need a Senior Developer You Can Rely On?
+            </h2>
+            <p class="cta-description">
+              With over 7 years of experience, I build blazing-fast, scalable
+              apps using Next.js, Nuxt, WordPress, and more. Let's build
+              something great.
+            </p>
+            <a href="/contact" class="cta-button">Let's Work Together →</a>
+          </div>
+        </section>
       </article>
     </main>
     <Footer />
@@ -104,6 +117,102 @@ import Experience from "../components/HomePage/Experience.astro";
 
     .header-background {
       height: 60vh;
+    }
+  }
+
+  .cta-section {
+    width: 100%;
+    margin: 0 auto;
+    padding: 6rem 1rem;
+    text-align: center;
+    background-color: transparent;
+  }
+
+  .cta-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    border: 1px solid #f8fafc;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .cta-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .section-title {
+    font-size: 3rem;
+    font-weight: 400;
+    margin: 0 0 2rem 0;
+    color: var(--white);
+  }
+
+  .cta-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 0 auto 2rem;
+    max-width: 600px;
+    color: #f8fafc;
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--white);
+    background-color: transparent;
+    border: 1px solid #f8fafc;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+
+  .cta-button:hover {
+    background-color: #f8fafc;
+    color: #1a1a1a;
+    transform: translateY(-2px);
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .cta-section {
+      padding: 4rem 2rem;
+    }
+
+    .section-title {
+      font-size: 3.5rem;
+    }
+
+    .cta-description {
+      font-size: 1.3rem;
+    }
+
+    .cta-button {
+      font-size: 1.3rem;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .cta-section {
+      padding: 6rem 0;
+    }
+
+    .section-title {
+      font-size: 4rem;
+    }
+
+    .cta-description {
+      font-size: 1.5rem;
+    }
+
+    .cta-button {
+      font-size: 1.4rem;
+      padding: 1.2rem 2.5rem;
     }
   }
 </style>
