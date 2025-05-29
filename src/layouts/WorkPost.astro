@@ -1,8 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import BaseLayout from "./BaseLayout.astro";
 import CTA from "../components/CTA.astro";
 
 interface Props {
@@ -37,88 +35,80 @@ const currentIndex = sortedWork.findIndex((post) => post.data.title === title);
 const nextWork = sortedWork[currentIndex + 1] || sortedWork[0]; // Loop back to first if at end
 ---
 
-<html lang="en">
-  <head>
-    <BaseHead title={title} description={description} />
-  </head>
-
-  <body>
-    <Header />
-    <main class="work-post">
-      <article>
-        <div class="images-container">
-          <div class="mobile-image">
-            {
-              mobileImage && (
-                <img width={375} height={667} src={mobileImage} alt={title} />
-              )
-            }
-          </div>
-          <div class="hero-image">
-            {
-              heroImage && (
-                <img width={1020} height={510} src={heroImage} alt={title} />
-              )
-            }
-          </div>
+<BaseLayout title={title} description={description}>
+  <main class="work-post">
+    <article>
+      <div class="images-container">
+        <div class="mobile-image">
+          {
+            mobileImage && (
+              <img width={375} height={667} src={mobileImage} alt={title} />
+            )
+          }
         </div>
+        <div class="hero-image">
+          {
+            heroImage && (
+              <img width={1020} height={510} src={heroImage} alt={title} />
+            )
+          }
+        </div>
+      </div>
 
-        <div class="prose">
-          <div class="title">
-            <h1>{title}</h1>
-            <div class="date">
-              Project completed: <time
-                >{
-                  pubDate.toLocaleDateString("en-us", {
-                    year: "numeric",
-                    month: "short",
-                  })
-                }</time
-              >
-              {
-                updatedDate && (
-                  <div class="last-updated-on">
-                    Last updated on{" "}
-                    <time>
-                      {updatedDate.toLocaleDateString("en-us", {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                      })}
-                    </time>
-                  </div>
-                )
-              }
-            </div>
-            <div class="technologies">
-              <h3>Technologies Used:</h3>
-              <ul>
-                {technologies.map((tech) => <li>{tech}</li>)}
-              </ul>
-            </div>
-            <a
-              href={projectUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="project-link"
+      <div class="prose">
+        <div class="title">
+          <h1>{title}</h1>
+          <div class="date">
+            Project completed: <time
+              >{
+                pubDate.toLocaleDateString("en-us", {
+                  year: "numeric",
+                  month: "short",
+                })
+              }</time
             >
-              View Live Project →
-            </a>
+            {
+              updatedDate && (
+                <div class="last-updated-on">
+                  Last updated on{" "}
+                  <time>
+                    {updatedDate.toLocaleDateString("en-us", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </time>
+                </div>
+              )
+            }
           </div>
-          <slot />
-        </div>
-        <div class="next-project">
-          <div class="next-label mb-4">Next Project</div>
-          <a href={`/work/${nextWork.slug}`} class="next-project-link">
-            <span class="next-title">{nextWork.data.title} →</span>
+          <div class="technologies">
+            <h3>Technologies Used:</h3>
+            <ul>
+              {technologies.map((tech) => <li>{tech}</li>)}
+            </ul>
+          </div>
+          <a
+            href={projectUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-link"
+          >
+            View Live Project →
           </a>
         </div>
-      </article>
-      <CTA />
-    </main>
-    <Footer />
-  </body>
-</html>
+        <slot />
+      </div>
+      <div class="next-project">
+        <div class="next-label mb-4">Next Project</div>
+        <a href={`/work/${nextWork.slug}`} class="next-project-link">
+          <span class="next-title">{nextWork.data.title} →</span>
+        </a>
+      </div>
+    </article>
+    <CTA />
+  </main>
+</BaseLayout>
 
 <style>
   .work-post {
