@@ -1,70 +1,60 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Expertise from "../components/HomePage/Expertise.astro";
 import Work from "../components/HomePage/Work.astro";
 import Experience from "../components/HomePage/Experience.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Adam Speer",
-        "url": "https://adamspeerweb.dev",
-        "jobTitle": "Web Developer",
-        "worksFor": {
-          "@type": "Organization",
-          "name": "Self-Employed"
-        },
-        "sameAs": [
-          "https://linkedin.com/in/adam-speer/",
-          "https://github.com/speerdo"
-        ]
-      }
-    </script>
-  </head>
-  <body>
-    <Header />
-    <main>
-      <article>
-        <section id="header" class="section header-background">
-          <div class="text-container">
-            <h1 class="header-title">
-              <span class="header-title-highlight">Adam</span> Speer
-            </h1>
-            <h2 class="header-subtitle">
-              Full Stack Developer | Software Engineer
-            </h2>
-          </div>
-        </section>
-        <Expertise />
-        <Work />
-        <Experience />
-        <section class="section cta-section">
-          <div class="cta-container">
-            <h2 class="section-title">
-              Need a Senior Developer You Can Rely On?
-            </h2>
-            <p class="cta-description">
-              With over 7 years of experience, I build blazing-fast, scalable
-              apps using Next.js, Nuxt, WordPress, and more. Let's build
-              something great.
-            </p>
-            <a href="/contact" class="cta-button">Let's Work Together →</a>
-          </div>
-        </section>
-      </article>
-    </main>
-    <Footer />
-  </body>
-</html>
+<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Adam Speer",
+      "url": "https://adamspeerweb.dev",
+      "jobTitle": "Web Developer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Self-Employed"
+      },
+      "sameAs": [
+        "https://linkedin.com/in/adam-speer/",
+        "https://github.com/speerdo"
+      ]
+    }
+  </script>
+  <main>
+    <article>
+      <section id="header" class="section header-background">
+        <div class="text-container">
+          <h1 class="header-title">
+            <span class="header-title-highlight">Adam</span> Speer
+          </h1>
+          <h2 class="header-subtitle">
+            Full Stack Developer | Software Engineer
+          </h2>
+        </div>
+      </section>
+      <Expertise />
+      <Work />
+      <Experience />
+      <section class="section cta-section">
+        <div class="cta-container">
+          <h2 class="section-title">
+            Need a Senior Developer You Can Rely On?
+          </h2>
+          <p class="cta-description">
+            With over 7 years of experience, I build blazing-fast, scalable apps
+            using Next.js, Nuxt, WordPress, and more. Let's build something
+            great.
+          </p>
+          <a href="/contact" class="cta-button">Let's Work Together →</a>
+        </div>
+      </section>
+    </article>
+  </main>
+</BaseLayout>
 
 <style>
   .main {
