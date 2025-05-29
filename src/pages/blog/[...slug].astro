@@ -1,21 +1,44 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
-import BlogPost from '../../layouts/BlogPost.astro';
-import { render } from 'astro:content';
+import { type CollectionEntry, getCollection } from "astro:content";
+import BlogPost from "../../layouts/BlogPost.astro";
+import { render } from "astro:content";
 
 export async function getStaticPaths() {
-	const posts = await getCollection('blog');
-	return posts.map((post) => ({
-		params: { slug: post.id },
-		props: post,
-	}));
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: post,
+  }));
 }
-type Props = CollectionEntry<'blog'>;
+type Props = CollectionEntry<"blog">;
 
 const post = Astro.props;
 const { Content } = await render(post);
 ---
 
 <BlogPost {...post.data}>
-	<Content />
+  <div class="blog-content">
+    <Content />
+  </div>
 </BlogPost>
+
+<style>
+  .blog-content :global(h2) {
+    margin-top: 2rem;
+  }
+  .blog-content :global(h3) {
+    margin-top: 1.5rem;
+  }
+  .blog-content :global(h4) {
+    margin-top: 0.5rem;
+  }
+  .blog-content :global(ul) {
+    margin-top: 0.5rem;
+    list-style-type: disc;
+    padding-left: 1.5rem;
+  }
+  .blog-content :global(li) {
+    margin-top: 0.25rem;
+    padding-left: 0.5rem;
+  }
+</style>

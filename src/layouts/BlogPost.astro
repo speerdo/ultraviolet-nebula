@@ -1,108 +1,114 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import FormattedDate from '../components/FormattedDate.astro';
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+import CTA from "../components/CTA.astro";
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
 <html lang="en">
-	<head>
-		<BaseHead title={title} description={description} />
-		<style>
-			.blog-post {
-				width: 100%;
-				max-width: 100%;
-				margin: 10rem auto 0;
-			}
-			.hero-image {
-				width: 100%;
-			}
-			.hero-image img {
-				display: block;
-				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
-			}
-			.prose {
-				width: 65%;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 1em;
-				color: #f8fafc;
-			}
-			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
-			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
-			}
-			.date {
-				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
+  <head>
+    <BaseHead title={title} description={description} />
+    <style>
+      .blog-post {
+        width: 100%;
+        max-width: 100%;
+        margin: 10rem auto 0;
+      }
+      .hero-image {
+        width: 100%;
+      }
+      .hero-image img {
+        display: block;
+        margin: 0 auto;
+        border-radius: 12px;
+        box-shadow: var(--box-shadow);
+      }
+      .prose {
+        width: 65%;
+        max-width: calc(100% - 2em);
+        margin: auto;
+        padding: 1em;
+        color: #f8fafc;
+      }
+      .title {
+        margin-bottom: 1em;
+        padding: 1em 0;
+        text-align: center;
+        line-height: 1;
+      }
+      .title h1 {
+        margin: 0 0 0.5em 0;
+      }
+      .date {
+        margin-bottom: 0.5em;
+        color: rgb(var(--gray));
+      }
+      .last-updated-on {
+        font-style: italic;
+      }
 
-			.back-to-blog {
-				color: var(--accent);
-			}
+      .back-to-blog {
+        color: var(--accent);
+      }
 
-			.back-to-blog:hover {
-				color: var(--accent-dark);
-			}
+      .back-to-blog:hover {
+        color: var(--accent-dark);
+      }
 
-			@media screen and (max-width: 768px) {
-				.blog-post {
-					margin: 7rem auto 0;
-				}
-				main {
-					padding: 1rem;
-				}
-				.prose {
-					width: 100%;
-					max-width: 100%;
-					padding: 2rem;
-				}
-			}
-		</style>
-	</head>
+      @media screen and (max-width: 768px) {
+        .blog-post {
+          margin: 7rem auto 0;
+        }
+        main {
+          padding: 1rem;
+        }
+        .prose {
+          width: 100%;
+          max-width: 100%;
+          padding: 2rem;
+        }
+      }
+    </style>
+  </head>
 
-	<body>
-		<Header />
-		<main class="blog-post">
-			<article>
-				<div class="hero-image">
-					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
-				</div>
-				<div class="prose">
-					<div class="title">
-						<div class="date">
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
-						</div>
-						<h1>{title}</h1>
-						<hr />
-					</div>
-					<slot />
-					<a href="/blog" class="back-to-blog">Back to Blog</a>
-				</div>
-			</article>
-		</main>
-		<Footer />
-	</body>
+  <body>
+    <Header />
+    <main class="blog-post">
+      <article>
+        <div class="hero-image">
+          {
+            heroImage && (
+              <img width={1020} height={510} src={heroImage} alt="" />
+            )
+          }
+        </div>
+        <div class="prose">
+          <div class="title">
+            <div class="date">
+              <FormattedDate date={pubDate} />
+              {
+                updatedDate && (
+                  <div class="last-updated-on">
+                    Last updated on <FormattedDate date={updatedDate} />
+                  </div>
+                )
+              }
+            </div>
+            <h1>{title}</h1>
+            <hr />
+          </div>
+          <slot />
+          <a href="/blog" class="back-to-blog">Back to Blog</a>
+        </div>
+      </article>
+    </main>
+    <CTA />
+    <Footer />
+  </body>
 </html>
