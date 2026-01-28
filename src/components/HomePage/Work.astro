@@ -2,60 +2,70 @@
 import WorkCard from "./WorkCard.astro";
 
 // Keep your projects list in Astro frontmatter
+// Ordered by relevance: AI automation projects first, then corporate work, then older client work
 const projects = [
   {
+    title: "DowntownDry",
+    description: "AI venue verification system achieving 97% accuracy with 90%+ reduction in manual review",
+    image: "/images/downtowndry_mobile.png",
+    link: "/work/downtown-dry",
+    featured: true,
+  },
+  {
     title: "RecycleOldTech",
-    description: "A nationwide US Directory of E-Waste recycling centers",
+    description: "E-waste directory with AI-powered verification and 1,000+ monthly automated transactions",
     image: "/images/recycleoldtech_mobile.png",
     link: "/work/recycle-old-tech",
+    featured: true,
   },
-  {
-    title: "Ag & Business Legal Strategies",
-    description: "Redesign of a feature rich content site with WordPress.",
-    image: "/images/abls_mobile.png",
-    link: "/work/ag-and-business-legal-strategies",
-  },
-  {
-    title: "Viewfinder Media",
-    description: "A showcase of my work and experience.",
-    image: "/images/viewfinder.png",
-    link: "/work/viewfinder",
-  },
+  // IndiAide RTM - hidden for now, file kept at src/content/work/indiaide-rtm.md
   {
     title: "Workflow Automation Strategies",
-    description: "A custom blog platform powered by Node.js and MongoDB.",
+    description: "Workflow automation consulting and implementation platform",
     image: "/images/was-mobile.png",
     link: "/work/workflow-automation-strategies",
   },
   {
     title: "Mounjaro (Eli Lilly)",
-    description: "A custom blog platform powered by Node.js and MongoDB.",
+    description: "Led website migration improving performance by 30% for 50,000+ monthly users",
     image: "/images/mounjaro.png",
     link: "/work/mounjaro",
   },
   {
     title: "Salesforce.org",
-    description: "A showcase of my work and experience.",
+    description: "API integration layer reducing manual data entry by 60%",
     image: "/images/sfdo.png",
     link: "/work/salesforce",
   },
   {
+    title: "EdReports",
+    description: "[Your description here]",
+    image: "/images/edreports_mobile.png",
+    link: "/work/edreports",
+  },
+  {
+    title: "Ag & Business Legal Strategies",
+    description: "Redesign of a feature rich content site with WordPress",
+    image: "/images/abls_mobile.png",
+    link: "/work/ag-and-business-legal-strategies",
+  },
+  {
+    title: "Viewfinder Media",
+    description: "Video production company website and portfolio",
+    image: "/images/viewfinder.png",
+    link: "/work/viewfinder",
+  },
+  {
     title: "Indiana Agriculture Nutrient Alliance",
-    description: "A fully functional e-commerce platform with React.",
+    description: "Agricultural industry website and resource platform",
     image: "/images/iana.png",
     link: "/work/iana",
   },
   {
     title: "Advanced Agrilytics",
-    description: "A fully functional e-commerce platform with React.",
+    description: "AgTech company website and data visualization platform",
     image: "/images/adag.png",
     link: "/work/advanced-agrilytics",
-  },
-  {
-    title: "Adam Speer Web Dev",
-    description: "A custom blog platform powered by Node.js and MongoDB.",
-    image: "/images/adamspeerwebdev.png",
-    link: "/work/adam-speer",
   },
 ];
 ---

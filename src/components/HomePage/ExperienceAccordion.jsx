@@ -42,7 +42,19 @@ function ExperienceAccordion({ experiences }) {
                   <div className="p-4 text-gray-100">
                     <h3 className="mb-4 mt-4">{experience.title}</h3>
                     
-                    <p className="mb-8">{experience.description}</p>
+                    <p className="mb-4">{experience.description}</p>
+                    
+                    {experience.bullets && experience.bullets.length > 0 && (
+                      <ul className="mb-8 pl-4 space-y-2">
+                        {experience.bullets.map((bullet, bulletIndex) => (
+                          <li key={bulletIndex} className="text-gray-200 flex items-start">
+                            <span className="text-blue-400 mr-2">•</span>
+                            <span>{bullet}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    
                     <div className="flex justify-start mb-8">                      
                       <img
                         src={experience.image}

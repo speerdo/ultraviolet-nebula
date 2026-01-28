@@ -12,28 +12,44 @@ import Experience from "../components/HomePage/Experience.astro";
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Adam Speer",
+      "jobTitle": "AI & Automation Engineer",
+      "description": "Senior full-stack engineer specializing in AI-powered workflow automation",
       "url": "https://adamspeerweb.dev",
-      "jobTitle": "Web Developer",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Self-Employed"
-      },
       "sameAs": [
-        "https://linkedin.com/in/adam-speer/",
+        "https://linkedin.com/in/adam-speer",
         "https://github.com/speerdo"
+      ],
+      "knowsAbout": [
+        "AI Integration",
+        "Workflow Automation",
+        "React",
+        "TypeScript",
+        "Node.js",
+        "OpenAI",
+        "Anthropic Claude",
+        "Google Gemini"
       ]
     }
   </script>
   <main>
     <article>
-      <section id="header" class="section header-background">
+        <section id="header" class="section header-background">
         <div class="text-container">
           <h1 class="header-title">
             <span class="header-title-highlight">Adam</span> Speer
           </h1>
           <h2 class="header-subtitle">
-            Full Stack Developer | Software Engineer
+            AI & Workflow Automation Engineer
           </h2>
+          <h3 class="header-tagline">
+            Building intelligent systems that eliminate manual work
+          </h3>
+          <p class="header-intro">
+            I'm a senior full-stack engineer specializing in AI-powered automation solutions. 
+            I build systems that reduce manual processes by up to 90% while maintaining high 
+            accuracy, using React, TypeScript, Node.js, and modern AI APIs (OpenAI, Anthropic, Google).
+          </p>
+          <a href="/contact" class="header-cta">Currently open to new opportunities &rarr;</a>
         </div>
       </section>
       <Expertise />
@@ -42,14 +58,26 @@ import Experience from "../components/HomePage/Experience.astro";
       <section class="section cta-section">
         <div class="cta-container">
           <h2 class="section-title">
-            Need a Senior Developer You Can Rely On?
+            Need an AI Automation Engineer?
           </h2>
           <p class="cta-description">
-            With over 7 years of experience, I build blazing-fast, scalable apps
-            using Next.js, Nuxt, WordPress, and more. Let's build something
-            great.
+            I build intelligent systems that eliminate manual work and deliver measurable ROI. 
+            Whether you need to automate workflows, integrate AI into your application, or 
+            optimize complex business processes, I can help.
           </p>
-          <a href="/contact" class="cta-button">Let's Work Together →</a>
+          <div class="cta-results">
+            <p class="cta-results-title">Recent results:</p>
+            <ul class="cta-results-list">
+              <li>90%+ reduction in manual processes</li>
+              <li>97% accuracy in AI verification systems</li>
+              <li>Solutions adopted by 15+ engineers at Fortune 500 companies</li>
+            </ul>
+          </div>
+          <p class="cta-availability">Currently accepting new projects and full-time opportunities.</p>
+          <div class="cta-buttons">
+            <a href="/contact" class="cta-button">Let's Work Together →</a>
+            <a href="/pdf/Adam_Speer_2026.pdf" target="_blank" class="cta-button cta-button-secondary">Download Resume</a>
+          </div>
         </div>
       </section>
     </article>
@@ -97,6 +125,38 @@ import Experience from "../components/HomePage/Experience.astro";
     margin: 1rem 0;
   }
 
+  .header-tagline {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin: 0.5rem 0 1.5rem 0;
+    opacity: 0.9;
+  }
+
+  .header-intro {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 0 auto 1.5rem;
+    max-width: 600px;
+    opacity: 0.9;
+  }
+
+  .header-cta {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .header-cta:hover {
+    background-color: white;
+    color: #1a1a1a;
+  }
+
   @media screen and (max-width: 768px) {
     .header-title {
       font-size: 4rem;
@@ -104,9 +164,19 @@ import Experience from "../components/HomePage/Experience.astro";
     .header-subtitle {
       font-size: 2rem;
     }
-
+    .header-tagline {
+      font-size: 1.2rem;
+    }
+    .header-intro {
+      font-size: 1rem;
+    }
+    .text-container {
+      max-width: 90%;
+    }
     .header-background {
-      height: 60vh;
+      height: auto;
+      min-height: 85vh;
+      padding: 2rem 0;
     }
   }
 
@@ -167,6 +237,59 @@ import Experience from "../components/HomePage/Experience.astro";
     background-color: #f8fafc;
     color: #1a1a1a;
     transform: translateY(-2px);
+  }
+
+  .cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .cta-button-secondary {
+    background-color: transparent;
+    border-color: rgba(248, 250, 252, 0.5);
+  }
+
+  .cta-results {
+    margin: 2rem auto;
+    max-width: 500px;
+    text-align: left;
+  }
+
+  .cta-results-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #f8fafc;
+  }
+
+  .cta-results-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .cta-results-list li {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #f8fafc;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .cta-results-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent, #60a5fa);
+  }
+
+  .cta-availability {
+    font-size: 1.1rem;
+    margin: 1.5rem 0 2rem;
+    color: #f8fafc;
+    font-style: italic;
   }
 
   @media screen and (min-width: 768px) and (max-width: 1023px) {

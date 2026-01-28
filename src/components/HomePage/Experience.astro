@@ -6,8 +6,13 @@ const experiences = [
   {
     company: 'Apex Systems (Eli Lilly and Company)',
     dates: 'April 2023 - Jan 2025',
-    title: 'Full Stack Developer | Digital Design Lead',
-    description: 'Led the redesign and migration of the Mounjaro US website from Nuxt.js to Next.js. Built and maintained complex feature requests and integrations. Served as a consultant for cross functional teams.',
+    title: 'Full Stack Engineer & Digital Design Lead',
+    description: 'Led the redesign and migration of the Mounjaro US website from Nuxt.js to Next.js. Built and maintained complex feature requests and integrations. Pioneered AI-assisted development workflows.',
+    bullets: [
+      'Led Mounjaro website migration improving performance by 30%',
+      'Built API layer serving 50,000+ monthly users',
+      'Pioneered AI-assisted development reducing debugging time by 20%',
+    ],
     image: '/images/lilly_logo.svg',
     link: 'https://lilly.com',
   },
@@ -16,8 +21,26 @@ const experiences = [
     dates: 'June 2021 - Jan 2023',
     title: 'Associate Software Engineer',
     description: 'Developed features for Salesforce.org and integrated third-party APIs. Automated accessibility testing, improving compliance across Salesforce products. Served as Scrum Master for the SFDO team.',
+    bullets: [
+      'Designed API integration layer reducing manual data entry by 60%',
+      'Led automated accessibility testing across 8+ products',
+      'Served as Scrum Master for cross-functional teams',
+    ],
     image: '/images/salesforce-with-type-logo.svg',
     link: 'https://salesforce.com',
+  },
+  {
+    company: 'Adam Speer Web Dev',
+    dates: 'Jan 2016 - Present',
+    title: 'Founder & Full Stack Developer',
+    description: 'Building AI-powered automation systems and scalable web applications for clients across multiple industries. Specialized in workflow automation, AI integration, and modern web technologies.',
+    bullets: [
+      'Built AI-powered automation systems for clients across multiple industries',
+      'Specialized in workflow automation, AI integration, and scalable web applications',
+      'Recent focus: AI-powered verification systems, healthcare compliance automation',
+    ],
+    image: '/images/AS_WHT.png',
+    link: 'https://adamspeerweb.dev',
   },
   {
     company: 'JDR Web Solutions',
@@ -31,24 +54,16 @@ const experiences = [
     company: 'Prosper Group LLC',
     dates: 'Jan 2018 - June 2019',
     title: 'Web Developer',
-    description: 'Designed and developed responsive campaign and corporate websites. Built custom plugins and collaborated with designers to implement pixel-perfect designs. Served as a consultant for cross functional teams.',
+    description: 'Designed and developed responsive campaign and corporate websites. Built custom plugins and collaborated with designers to implement pixel-perfect designs.',
     image: '/images/PG-Logo-2023-white.svg',
     link: 'https://www.prospergroupcorp.com/',
-  },
-  {
-    company: 'Freelance Web Developer',
-    dates: 'Jan 2017 - Present',
-    title: 'Web Developer',
-    description: 'Created websites, managed complex data, and provided custom solutions for diverse clients. Delivered full-service web solutions tailored to specific needs. Served as a consultant for many clients and built custom solutions in many web technologies.',
-    image: '/images/AS_WHT.png',
-    link: 'https://adamspeerweb.dev',
   },
 ];
 ---
 
 <section id="experience" class="experience-section">
   <h2 class="section-title">Professional Experience</h2>
-  <ExperienceAccordion experiences={experiences} client:visible />
+  <ExperienceAccordion experiences={experiences} client:load />
 </section>
 
 <style>
