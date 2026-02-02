@@ -55,12 +55,16 @@ function ExperienceAccordion({ experiences }) {
                       </ul>
                     )}
                     
-                    <div className="flex justify-start mb-8">                      
-                      <img
-                        src={experience.image}
-                        alt={experience.title}
-                        className="w-1/4 h-auto rounded"
-                      />
+                    <div className="flex justify-start mb-8">
+                      <div className="w-1/4 h-28 rounded overflow-hidden flex items-center">
+                        <img
+                          src={experience.image}
+                          alt={experience.title}
+                          className="w-full h-full object-contain object-center rounded"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </div>
                     </div>
                     <a
                       href={experience.link}
