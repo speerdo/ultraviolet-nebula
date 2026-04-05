@@ -15,18 +15,17 @@ function ExperienceAccordion({ experiences }) {
         return (
           <div key={index} className="border border-gray-700 rounded overflow-hidden">
             <button
+              type="button"
               onClick={() => toggle(index)}
-              className="flex flex-col md:flex-row md:items-center justify-between w-full p-4 background-accordion text-white text-left"
+              className="flex w-full cursor-pointer flex-col gap-2 p-4 text-left text-white background-accordion md:flex-row md:items-center md:justify-between md:gap-4"
             >
-              <h3 className="company-name text-xl mb-2 md:mb-0">{experience.company}</h3>
-              <p className="mb-0 flex flex-col md:flex-row md:items-center">
-                <span className="text-sm text-gray-300 mb-1 md:mb-0 md:mr-4">
-                  {experience.dates}
+              <h3 className="company-name m-0! shrink-0 text-xl">{experience.company}</h3>
+              <div className="flex flex-col gap-1 md:flex-row md:items-center md:gap-0 md:ml-auto">
+                <span className="text-sm text-gray-300 md:mr-4">{experience.dates}</span>
+                <span className="text-sm text-gray-300 tabular-nums" aria-hidden>
+                  {isOpen ? '−' : '+'}
                 </span>
-                <span className="text-sm text-gray-300">
-                  {isOpen ? '-' : '+'}
-                </span>
-              </p>
+              </div>
             </button>
 
             <AnimatePresence>

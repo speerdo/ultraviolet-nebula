@@ -25,6 +25,8 @@ const { project } = Astro.props;
 </div>
 
 <style>
+  @import "tailwindcss" reference;
+
   .project-card .card-content .project-link {
     font-size: 1.2rem;
   }
@@ -56,7 +58,7 @@ const { project } = Astro.props;
   }
 
   .image-overlay {
-    @apply absolute inset-0 bg-black bg-opacity-20;
+    @apply absolute inset-0 bg-black/20;
     transition: all 0.3s ease;
   }
 
@@ -65,7 +67,7 @@ const { project } = Astro.props;
   }
 
   .project-card:hover .image-overlay {
-    @apply bg-opacity-30;
+    @apply bg-black/30;
   }
 
   .card-content {

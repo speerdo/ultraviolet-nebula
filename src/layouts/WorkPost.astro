@@ -101,7 +101,7 @@ const nextWork = sortedWork[currentIndex + 1] || sortedWork[0]; // Loop back to 
       </div>
       <div class="next-project">
         <div class="next-label mb-4">Next Project</div>
-        <a href={`/work/${nextWork.slug}`} class="next-project-link">
+        <a href={`/work/${nextWork.id}`} class="next-project-link">
           <span class="next-title">{nextWork.data.title} →</span>
         </a>
       </div>
