@@ -1,7 +1,7 @@
 ---
 title: "DowntownDry | AI Venue Verification System"
 description: "Nationwide Non-alcholic venue directory. Utilized AI-powered venue verification automation achieving 97% accuracy while reducing manual review time by over 90%"
-pubDate: "2025-01-15"
+pubDate: "2026-01-15"
 heroImage: "/images/downtowndry_desktop.png"
 mobileImage: "/images/downtowndry_mobile.png"
 projectUrl: "https://downtowndry.com"

@@ -1,73 +1,32 @@
 ---
 import WorkCard from "./WorkCard.astro";
+import { getCollection } from "astro:content";
 
-// Keep your projects list in Astro frontmatter
-// Ordered by relevance: AI automation projects first, then corporate work, then older client work
-const projects = [
-  {
-    title: "DowntownDry",
-    description: "AI venue verification system achieving 97% accuracy with 90%+ reduction in manual review",
-    image: "/images/downtowndry_mobile.png",
-    link: "/work/downtown-dry",
-    featured: true,
-  },
-  {
-    title: "RecycleOldTech",
-    description: "E-waste directory with AI-powered verification and 1,000+ monthly automated transactions",
-    image: "/images/recycleoldtech_mobile.png",
-    link: "/work/recycle-old-tech",
-    featured: true,
-  },
-  {
-    title: "EdReports",
-    description: "[Your description here]",
-    image: "/images/edreports_mobile.png",
-    link: "/work/edreports",
-  },
-  {
-    title: "Mounjaro (Eli Lilly)",
-    description: "Led website migration improving performance by 30% for 50,000+ monthly users",
-    image: "/images/mounjaro.png",
-    link: "/work/mounjaro",
-  },
-  // IndiAide RTM - hidden for now, file kept at src/content/work/indiaide-rtm.m  
-  {
-    title: "Salesforce.org",
-    description: "API integration layer reducing manual data entry by 60%",
-    image: "/images/sfdo.png",
-    link: "/work/salesforce",
-  },
-  {
-    title: "Workflow Automation Strategies",
-    description: "Workflow automation consulting and implementation platform",
-    image: "/images/was-mobile.png",
-    link: "/work/workflow-automation-strategies",
-  },
-  {
-    title: "Ag & Business Legal Strategies",
-    description: "Redesign of a feature rich content site with WordPress",
-    image: "/images/abls_mobile.png",
-    link: "/work/ag-and-business-legal-strategies",
-  },
-  {
-    title: "Viewfinder Media",
-    description: "Video production company website and portfolio",
-    image: "/images/viewfinder.png",
-    link: "/work/viewfinder",
-  },
-  {
-    title: "Indiana Agriculture Nutrient Alliance",
-    description: "Agricultural industry website and resource platform",
-    image: "/images/iana.png",
-    link: "/work/iana",
-  },
-  {
-    title: "Advanced Agrilytics",
-    description: "AgTech company website and data visualization platform",
-    image: "/images/adag.png",
-    link: "/work/advanced-agrilytics",
-  },
-];
+const allWork = await getCollection("work");
+const projects = allWork
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .map((p) => ({
+    title: p.data.title.split("|")[0].trim(),
+    description: p.data.description,
+    image: p.data.mobileImage,
+    link: `/work/${p.id}`,
+  }));
+
+// Hardcoded order preserved below for reference — delete once pubDate ordering is confirmed
+// const projects = [
+//   { title: "DowntownDry", description: "AI venue verification system achieving 97% accuracy with 90%+ reduction in manual review", image: "/images/downtowndry_mobile.png", link: "/work/downtown-dry", featured: true },
+//   { title: "RecycleOldTech", description: "E-waste directory with AI-powered verification and 1,000+ monthly automated transactions", image: "/images/recycleoldtech_mobile.png", link: "/work/recycle-old-tech", featured: true },
+//   { title: "eBikeLocal", description: "Nationwide e-bike vendor directory with AI spec-driven data pipeline and Google API enrichment", image: "/images/ebikelocal_mobile.png", link: "/work/ebikelocal", featured: true },
+//   { title: "EdReports", description: "[Your description here]", image: "/images/edreports_mobile.png", link: "/work/edreports" },
+//   { title: "Mounjaro (Eli Lilly)", description: "Led website migration improving performance by 30% for 50,000+ monthly users", image: "/images/mounjaro.png", link: "/work/mounjaro" },
+//   // IndiAide RTM - hidden for now, file kept at src/content/work/indiaide-rtm.m
+//   { title: "Salesforce.org", description: "API integration layer reducing manual data entry by 60%", image: "/images/sfdo.png", link: "/work/salesforce" },
+//   { title: "Workflow Automation Strategies", description: "Workflow automation consulting and implementation platform", image: "/images/was-mobile.png", link: "/work/workflow-automation-strategies" },
+//   { title: "Ag & Business Legal Strategies", description: "Redesign of a feature rich content site with WordPress", image: "/images/abls_mobile.png", link: "/work/ag-and-business-legal-strategies" },
+//   { title: "Viewfinder Media", description: "Video production company website and portfolio", image: "/images/viewfinder.png", link: "/work/viewfinder" },
+//   { title: "Indiana Agriculture Nutrient Alliance", description: "Agricultural industry website and resource platform", image: "/images/iana.png", link: "/work/iana" },
+//   { title: "Advanced Agrilytics", description: "AgTech company website and data visualization platform", image: "/images/adag.png", link: "/work/advanced-agrilytics" },
+// ];
 ---
 
 <section id="work" class="work-section">
