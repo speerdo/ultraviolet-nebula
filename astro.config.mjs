@@ -5,6 +5,11 @@ import sitemap from '@astrojs/sitemap';
 import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 
+// `sourcemap` is valid at runtime for optimizeDeps output but is omitted from
+// Vite's `OutputOptions` type, so use `any` here to bypass the type mismatch.
+/** @type {any} */
+const optimizeOutput = { sourcemap: false };
+
 // https://astro.build/config
 export default defineConfig({
     site: 'https://www.adamspeerweb.dev',
@@ -29,8 +34,8 @@ export default defineConfig({
         // `sourceMappingURL=…entrypoint__js.js.map`, which browsers resolve under
         // `/@id/...` and get 404. This applies only to dependency optimization, not your app.
         optimizeDeps: {
-            esbuildOptions: {
-                sourcemap: false,
+            rolldownOptions: {
+                output: optimizeOutput,
             },
         },
     },
