@@ -23,7 +23,7 @@ Implemented a redesign of Ag & Business Legal Strategies website which included 
 
 - Installed new Wordpress theme
 - Implemented design from provided mock-ups in Figma
-- Implemented custom solutions leveraging third party plugins
+- Implemented custom solutions using third party plugins
 - Created templates for simpler updates
 - Added external APis for forms and anti-spam
 - Completed work on time that met or exceeded expectations

@@ -5,7 +5,7 @@ pubDate: "Aug 12 2025"
 heroImage: "/images/abls.png"
 ---
 
-In collaboration with [BLNKPG](https://www.blnkpg.com/), a woman-owned agency specializing in agricultural marketing, I recently completed a comprehensive website redesign for [Ag & Business Legal Strategies](https://www.ablsonline.com/), an uncommon law firm focused on agricultural and business law.
+In collaboration with [BLNKPG](https://www.blnkpg.com/), a woman-owned agency specializing in agricultural marketing, I recently completed a website redesign for [Ag & Business Legal Strategies](https://www.ablsonline.com/), an uncommon law firm focused on agricultural and business law.
 
 ## The Challenge
 
@@ -13,20 +13,20 @@ ABLS needed a modern, feature-rich website that would effectively communicate th
 
 ## Technical Implementation
 
-Working with WordPress as the foundation, I implemented a robust solution that balanced functionality with user experience. The project involved several key technical components:
+Working with WordPress as the foundation, I implemented a solid solution that balanced functionality with user experience. The project involved several key technical components:
 
 The new design implementation started with a modern page-builder theme, allowing for flexible content management while maintaining design consistency. This approach gives the ABLS team the ability to easily update and modify their content while preserving the professional look and feel of their brand.
 
-Security was a top priority, especially given the sensitive nature of legal services. I implemented comprehensive security features and integrated external APIs for forms and anti-spam protection, ensuring client information remains protected while maintaining seamless user interaction.
+Security was a top priority, especially given the sensitive nature of legal services. I implemented security features and integrated external APIs for forms and anti-spam protection, ensuring client information stays protected while keeping the user experience smooth.
 
 ## Custom Solutions and Integration
 
-One of the project's strengths is its seamless integration of various features:
+One of the project's strengths is how the various features work together:
 
-- A sophisticated blog platform for sharing legal insights and updates
-- Integrated social media connections to enhance their digital presence
+- A blog platform for sharing legal insights and updates
+- Integrated social media connections to build their digital presence
 - Custom templates for consistent content presentation
-- Streamlined payment systems for client convenience
+- Payment systems for client convenience
 
 The site was built with scalability in mind, allowing ABLS to easily add new content and features as their practice grows. The templates I created enable their team to maintain consistent branding and layout while updating content independently.
 

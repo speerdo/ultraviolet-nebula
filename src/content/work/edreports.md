@@ -21,14 +21,14 @@ EdReports is a nonprofit organization that reviews K-12 instructional materials 
 
 ### The Challenge
 
-EdReports was operating on a legacy Java web application with Vue 3 components that had become difficult to maintain and scale. The existing architecture created bottlenecks in the development workflow, making new feature deployment slow and error-prone. The application served thousands of educators nationwide, so any migration needed to be seamless with zero downtime.
+EdReports was operating on a legacy Java web application with Vue 3 components that had become difficult to maintain and scale. The existing architecture created bottlenecks in the development workflow, making new feature deployment slow and error-prone. The application served thousands of educators nationwide, so any migration needed to happen with zero downtime.
 
 Key challenges included:
 - Complex legacy codebase mixing Java backend with Vue frontend
 - Need to maintain all existing functionality during migration
 - Performance issues affecting user experience
 - Developer productivity constrained by outdated tooling
-- Risk management for a mission-critical educational platform
+- Risk management for an educational platform serving thousands of daily users
 
 ### The Solution
 
@@ -36,7 +36,7 @@ I architected and executed a complete migration from the legacy Java/Vue 3 stack
 
 - **Strategic Planning:** Developed a phased migration approach to minimize risk and ensure continuous operation
 - **Architecture Redesign:** Rebuilt the application structure using Nuxt.js best practices and modern Vue 3 composition API
-- **Component Migration:** Systematically refactored and migrated existing Vue components to work within the Nuxt.js ecosystem
+- **Component Migration:** Refactored and migrated existing Vue components to work within the Nuxt.js framework
 - **API Integration:** Maintained and improved connections to backend services while modernizing the frontend layer
 - **Performance Optimization:** Implemented code splitting, lazy loading, and SSR capabilities native to Nuxt.js
 - **Developer Experience:** Established new development workflows, build processes, and deployment pipelines
@@ -48,12 +48,12 @@ I architected and executed a complete migration from the legacy Java/Vue 3 stack
 - **Zero downtime migration** serving thousands of daily users throughout the transition
 - **Improved maintainability** with cleaner codebase structure and modern development patterns
 - **Enhanced performance metrics** across Core Web Vitals measurements
-- **Faster feature deployment** with streamlined build and deployment processes
+- **Faster feature deployment** with cleaner build and deployment processes
 
 ### Responsibilities
 
 - Led technical architecture and migration strategy for platform modernization
-- Refactored legacy Vue 3 components to work seamlessly within Nuxt.js framework
+- Refactored legacy Vue 3 components to work within the Nuxt.js framework
 - Collaborated with EdReports team to ensure feature parity and improved functionality
 - Implemented performance optimizations including SSR, code splitting, and asset optimization
 - Established CI/CD pipelines for automated testing and deployment

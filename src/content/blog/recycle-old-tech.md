@@ -1,11 +1,11 @@
 ---
-title: "RecycleOldTech.com – A Hybrid Astro Web App"
+title: "RecycleOldTech.com: A Hybrid Astro Web App"
 description: "Building a nationwide directory for electronics recycling"
 pubDate: "May 29 2025"
 heroImage: "/images/recycleoldtech_desktop.png"
 ---
 
-Every year, millions of electronic devices are discarded improperly, creating significant environmental issues. RecycleOldTech.com is an ambitious nationwide directory designed to simplify the process of responsibly recycling electronic waste. As the lead developer, I took this project from concept to deployment, combining powerful web technologies and innovative data-handling techniques to deliver a high-performance, scalable solution.
+Every year, millions of electronic devices are discarded improperly, creating significant environmental issues. RecycleOldTech.com is a nationwide directory designed to simplify the process of responsibly recycling electronic waste. As the lead developer, I took this project from concept to deployment, combining web technologies and custom data-handling techniques to deliver a fast, scalable site.
 
 ## The Challenge
 
@@ -15,7 +15,7 @@ The goal was clear: create a reliable, user-friendly platform to help users acro
 
 ### Gathering Data with Outscraper
 
-One of the initial technical challenges was compiling a comprehensive list of recycling centers. I employed Outscraper, a tool specifically designed for extracting large-scale data from Google Maps. With Outscraper, I collected detailed information on thousands of electronics recycling locations, including:
+One of the initial technical challenges was compiling a thorough list of recycling centers. I used Outscraper, a tool for extracting large-scale data from Google Maps. With Outscraper, I collected detailed information on thousands of electronics recycling locations, including:
 
 - Business names
 - Addresses
@@ -25,7 +25,7 @@ One of the initial technical challenges was compiling a comprehensive list of re
 
 ### Data Processing and Import into Supabase
 
-The raw data extracted from Outscraper needed significant processing to ensure consistency and usability. Using custom scripts written in Node.js and Python, I formatted and cleaned the data, ensuring fields were accurate and consistent. Once prepared, I imported this structured dataset into Supabase, a robust PostgreSQL-based backend service that offered rapid querying capabilities and reliable storage.
+The raw data extracted from Outscraper needed significant processing to ensure consistency and usability. Using custom scripts written in Node.js and Python, I formatted and cleaned the data, ensuring fields were accurate and consistent. Once prepared, I imported this structured dataset into Supabase, a PostgreSQL-based backend service that offered fast querying and reliable storage.
 
 ### Astro Framework for Hybrid Static and Dynamic Rendering
 
@@ -39,7 +39,7 @@ This hybrid approach allowed me to balance performance, scalability, and dynamic
 
 ## Results and Future Expansion
 
-RecycleOldTech.com now provides quick, seamless access to certified recycling centers nationwide, helping users responsibly manage e-waste. The site delivers strong performance metrics, an SEO-friendly structure, and an intuitive user experience.
+RecycleOldTech.com now provides quick access to certified recycling centers nationwide, helping users responsibly manage e-waste. The site delivers strong performance metrics, an SEO-friendly structure, and an intuitive user experience.
 
 Future development includes:
 
@@ -58,4 +58,4 @@ Future development includes:
   - TypeScript
   - Tailwind CSS
 
-This project underscores my capability in integrating complex data pipelines, utilizing modern web frameworks, and delivering performant and scalable solutions. To explore RecycleOldTech.com firsthand, visit [www.recycleoldtech.com](https://www.recycleoldtech.com).
+This project shows my ability to integrate data pipelines, work with modern web frameworks, and deliver performant, scalable sites. To explore RecycleOldTech.com firsthand, visit [www.recycleoldtech.com](https://www.recycleoldtech.com).

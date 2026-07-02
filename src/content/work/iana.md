@@ -17,7 +17,7 @@ company: "Indiana Agriculture Nutrient Alliance"
 
 ## Project Overview
 
-Developed a comprehensive platform for the Indiana Agriculture Nutrient Alliance, focusing on sustainable agricultural practices and resource management.
+Built a platform for the Indiana Agriculture Nutrient Alliance, focused on sustainable agricultural practices and resource management.
 
 ### Responsibilities
 

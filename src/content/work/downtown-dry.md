@@ -28,7 +28,7 @@ Manual venue verification is time-consuming and error-prone. Businesses need to 
 
 I built an intelligent verification automation system that combines:
 
-- **Google APIs Integration**: Places, Maps, and Business APIs for comprehensive data gathering
+- **Google APIs Integration**: Places, Maps, and Business APIs for thorough data gathering
 - **Gemini AI Processing**: Automated analysis and verification of business data
 - **Smart Validation Logic**: Cross-referencing multiple data sources for accuracy
 - **Human-in-the-Loop Design**: Flagging edge cases for human review while automating clear-cut decisions
@@ -42,7 +42,7 @@ I built an intelligent verification automation system that combines:
 
 ### Technical Implementation
 
-The system was built using Astro.js for the frontend, with a robust backend using Supabase that orchestrates calls to multiple Google APIs. Gemini AI handles the intelligent decision-making, analyzing business data across multiple dimensions to determine verification status.
+The system was built using Astro.js for the frontend, with a Supabase backend that orchestrates calls to multiple Google APIs. Gemini AI handles the decision-making, analyzing business data across multiple dimensions to determine verification status.
 
 ### Responsibilities
 

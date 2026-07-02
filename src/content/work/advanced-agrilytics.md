@@ -17,11 +17,11 @@ company: "Advanced Agrilytics"
 
 ## Project Overview
 
-Advanced Agrilytics platform serves as a comprehensive agricultural technology research organization, providing Indiana farmers with precision data and insights.
+Advanced Agrilytics is an agricultural technology research organization providing Indiana farmers with precision data and insights.
 
 ### Responsibilities
 
-- Built robust content site with WordPress
+- Built a solid content site with WordPress
 - Integrated custom APIs
 - Developed user authentication and authorization
 - Implemented responsive design patterns

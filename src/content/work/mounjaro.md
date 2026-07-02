@@ -12,22 +12,22 @@ company: "Eli Lilly and Company"
 
 ## Project Overview
 
-The Mounjaro US website serves as a crucial platform for patients and healthcare providers seeking information about Eli Lilly's revolutionary diabetes medication. Our team was tasked with completely redesigning and rebuilding the site to improve performance, accessibility, and user experience.
+The Mounjaro US website serves as a resource for patients and healthcare providers seeking information about Eli Lilly's diabetes medication. Our team was tasked with redesigning and rebuilding the site to improve performance, accessibility, and user experience.
 
 ### Key Achievements
 
 - Successfully migrated the platform from Nuxt.js to Next.js
 - Implemented a new design system focusing on accessibility and user experience
 - Improved site performance with 90+ Lighthouse scores
-- Built robust analytics integration for better user insights
+- Built analytics integration for better user insights
 
 ### Technical Details
 
-The site was built using Next.js 13 with App Router, leveraging the latest React features and best practices. We implemented a custom design system using React, SCSS, and HTML, ensuring consistent styling and excellent responsive behavior across all devices.
+The site was built using Next.js 13 with App Router, using the latest React features and best practices. We implemented a custom design system using React, SCSS, and HTML, ensuring consistent styling and responsive behavior across all devices.
 
 Performance optimization was a key focus, implementing:
 
 - Static page generation where possible
 - Dynamic imports for larger components
 - Efficient image optimization
-- Robust caching strategies
+- Solid caching strategies

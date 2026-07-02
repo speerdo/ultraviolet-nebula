@@ -17,7 +17,7 @@ company: "Creative Bandit, LLC"
 
 ## Project Overview
 
-RecycleOldTech.com is a user-friendly directory that helps individuals and businesses find certified electronics recycling centers across the U.S. It connects users with safe, eco-conscious options for disposing of old phones, laptops, TVs, and more—supporting responsible e-waste management and a cleaner planet.
+RecycleOldTech.com is a user-friendly directory that helps individuals and businesses find certified electronics recycling centers across the U.S. It connects users with safe, eco-conscious options for disposing of old phones, laptops, TVs, and more, supporting responsible e-waste management and a cleaner planet.
 
 ### Responsibilities
 

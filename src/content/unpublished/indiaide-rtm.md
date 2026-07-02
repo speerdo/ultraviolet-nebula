@@ -16,7 +16,7 @@ company: "IndiAide"
 
 ## Project Overview
 
-IndiAide RTM is a HIPAA-compliant backend automation system designed for Medicare Remote Therapeutic Monitoring (RTM). The platform streamlines healthcare provider workflows while maintaining strict regulatory compliance requirements.
+IndiAide RTM is a HIPAA-compliant backend automation system designed for Medicare Remote Therapeutic Monitoring (RTM). The platform simplifies healthcare provider workflows while maintaining strict regulatory compliance requirements.
 
 ### The Challenge
 
@@ -24,23 +24,23 @@ Healthcare providers managing Remote Therapeutic Monitoring face complex complia
 
 ### The Solution
 
-I architected a comprehensive backend automation system that:
+I architected a backend automation system that:
 
 - **Automates Data Processing**: Reduces manual entry while maintaining accuracy
 - **Ensures HIPAA Compliance**: Built with healthcare security requirements from the ground up
 - **Streamlines Medicare Billing**: Optimizes workflow for RTM billing requirements
-- **Integrates Seamlessly**: Works with existing healthcare provider systems
+- **Integrates with Existing Systems**: Works with healthcare provider systems already in place
 
 ### Key Results
 
 - **HIPAA-compliant automation** - Meeting all healthcare regulatory requirements
-- **Medicare billing optimization** - Streamlined workflow for RTM documentation
+- **Medicare billing optimization** - Simplified workflow for RTM documentation
 - **Reduced manual data entry** - Freeing healthcare staff for patient care
 - **Reliable data accuracy** - Automated validation and error checking
 
 ### Technical Implementation
 
-Built on Xano with PostgreSQL for robust, scalable data management. The system uses REST APIs for integration with healthcare provider systems and implements comprehensive audit logging for HIPAA compliance. Workflow automation handles routine tasks while flagging exceptions for human review.
+Built on Xano with PostgreSQL for reliable, scalable data management. The system uses REST APIs for integration with healthcare provider systems and implements audit logging for HIPAA compliance. Workflow automation handles routine tasks while flagging exceptions for human review.
 
 ### Responsibilities
 
