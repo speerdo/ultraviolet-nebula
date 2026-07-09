@@ -1,0 +1,105 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Page Not Found | Adam Speer"
+  description="The page you were looking for could not be found."
+>
+  <main class="notfound">
+    <section class="notfound-inner">
+      <p class="notfound-code">404</p>
+      <h1 class="notfound-title">This page took a wrong turn</h1>
+      <p class="notfound-text">
+        The page you are looking for was moved, renamed, or never existed. Let's
+        get you back to something useful.
+      </p>
+      <div class="notfound-actions">
+        <a href="/" class="notfound-button">Back to Home →</a>
+        <a href="/#work" class="notfound-button notfound-button-secondary">
+          View My Work
+        </a>
+        <a href="/contact" class="notfound-button notfound-button-secondary">
+          Get in Touch
+        </a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .notfound {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    padding: 8rem 1rem 4rem;
+    text-align: center;
+  }
+
+  .notfound-inner {
+    max-width: 40rem;
+  }
+
+  .notfound-code {
+    font-family: "Smooch Sans", sans-serif;
+    font-size: 8rem;
+    line-height: 1;
+    margin: 0;
+    color: var(--accent);
+    opacity: 0.9;
+  }
+
+  .notfound-title {
+    font-size: 3rem;
+    margin: 0.5rem 0 1rem;
+  }
+
+  .notfound-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    margin: 0 auto 2rem;
+    max-width: 32rem;
+  }
+
+  .notfound-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .notfound-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.9rem 1.8rem;
+    font-size: 1.1rem;
+    color: var(--white);
+    background-color: transparent;
+    border: 1px solid #f8fafc;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .notfound-button:hover {
+    background-color: #f8fafc;
+    color: #1a1a1a;
+    transform: translateY(-2px);
+  }
+
+  .notfound-button-secondary {
+    border-color: rgba(248, 250, 252, 0.5);
+  }
+
+  @media screen and (max-width: 720px) {
+    .notfound-code {
+      font-size: 5.5rem;
+    }
+    .notfound-title {
+      font-size: 2.2rem;
+    }
+  }
+</style>

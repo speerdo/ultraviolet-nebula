@@ -2,8 +2,8 @@
 title: "eBikeLocal | E-Bike Vendor Directory"
 description: "A nationwide directory of e-bike vendors, built with an AI spec-driven data pipeline that aggregates vendor-specific location data and enriches it with Google APIs"
 pubDate: "2026-05-14"
-heroImage: "/images/ebikelocal.png"
-mobileImage: "/images/ebikelocal_mobile.png"
+heroImage: "/images/ebikelocal.webp"
+mobileImage: "/images/ebikelocal_mobile.webp"
 projectUrl: "https://ebikelocal.com"
 technologies:
   - "Astro"

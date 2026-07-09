@@ -117,6 +117,16 @@ a {
 a:hover {
 	color: var(--accent-dark);
 }
+/* Visible keyboard focus indicator for all interactive elements. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+	outline: 3px solid var(--accent);
+	outline-offset: 3px;
+	border-radius: 2px;
+}
 p {
 	margin-bottom: 1em;
 }

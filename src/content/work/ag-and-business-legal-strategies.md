@@ -2,8 +2,8 @@
 title: "Ag & Business Legal Strategies"
 description: "Redesign of a feature rich content site with WordPress."
 pubDate: "2022-04-10"
-heroImage: "/images/abls.png"
-mobileImage: "/images/abls_mobile.png"
+heroImage: "/images/abls.webp"
+mobileImage: "/images/abls_mobile.webp"
 projectUrl: "https://www.ablsonline.com/"
 technologies:
   - "WordPress"

@@ -2,8 +2,8 @@
 title: "RecycleOldTech | E-Waste Recycling Directory"
 description: "A nationwide US Directory of E-Waste recycling centers"
 pubDate: "2025-05-05"
-heroImage: "/images/recycleoldtech_desktop.png"
-mobileImage: "/images/recycleoldtech_mobile.png"
+heroImage: "/images/recycleoldtech_desktop.webp"
+mobileImage: "/images/recycleoldtech_mobile.webp"
 projectUrl: "https://www.recycleoldtech.com"
 technologies:
   - "Astro"

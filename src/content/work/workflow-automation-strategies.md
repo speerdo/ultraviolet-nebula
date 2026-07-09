@@ -2,8 +2,8 @@
 title: "Workflow Automation Strategies"
 description: "A business website powered by Astro and Vercel"
 pubDate: "2025-02-27"
-heroImage: "/images/was.png"
-mobileImage: "/images/was-mobile.png"
+heroImage: "/images/was.webp"
+mobileImage: "/images/was-mobile.webp"
 projectUrl: "https://www.workflowautomationstrategies.com/"
 technologies: 
   - "Astro"

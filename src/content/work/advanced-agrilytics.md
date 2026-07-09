@@ -2,8 +2,8 @@
 title: "Advanced Agrilytics"
 description: "A fully functional content site with WordPress."
 pubDate: "2024-01-01"
-heroImage: "/images/adag_desktop.png"
-mobileImage: "/images/adag.png"
+heroImage: "/images/adag_desktop.webp"
+mobileImage: "/images/adag.webp"
 projectUrl: "https://advancedagrilytics.com/"
 technologies: 
   - "WordPress"

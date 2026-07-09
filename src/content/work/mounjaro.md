@@ -2,8 +2,8 @@
 title: "Mounjaro US Website"
 description: "Led the redesign and development of the Mounjaro US website, improving user experience and performance."
 pubDate: "2025-01-21"
-heroImage: "/images/mounjaro_desktop.png"
-mobileImage: "/images/mounjaro.png"
+heroImage: "/images/mounjaro_desktop.webp"
+mobileImage: "/images/mounjaro.webp"
 projectUrl: "https://mounjaro.lilly.com"
 technologies:
   ["Next.js", "React", "Nuxt.js", "AWS", "SCSS", "HTML", "JavaScript"]

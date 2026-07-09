@@ -30,6 +30,9 @@ import Layout from '../layouts/Contact.astro';
 
 		<form class="contact-form" action="https://api.web3forms.com/submit" method="POST" aria-label="Contact form">
 			<input type="hidden" name="access_key" value="96e6da2b-7be4-4320-9782-e3b525a20134" />
+			<input type="hidden" name="subject" value="New message from adamspeerweb.dev" />
+			<!-- Honeypot: hidden from real users, bots tend to fill it in. -->
+			<input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
 			<div class="form-group">
 				<label for="name">Name</label>
 				<input type="text" id="name" name="name" required />
@@ -46,9 +49,59 @@ import Layout from '../layouts/Contact.astro';
 			</div>
 
 			<button type="submit">Send Message</button>
+			<p class="form-status" role="status" aria-live="polite"></p>
 		</form>
 	</div>
 </Layout>
+
+<script>
+	const form = document.querySelector<HTMLFormElement>(".contact-form");
+	const status = document.querySelector<HTMLParagraphElement>(".form-status");
+
+	form?.addEventListener("submit", async (event) => {
+		event.preventDefault();
+		if (!status) return;
+
+		const button = form.querySelector<HTMLButtonElement>("button[type='submit']");
+		const originalLabel = button?.textContent ?? "Send Message";
+
+		status.className = "form-status";
+		status.textContent = "";
+		if (button) {
+			button.disabled = true;
+			button.textContent = "Sending...";
+		}
+
+		try {
+			const response = await fetch(form.action, {
+				method: "POST",
+				headers: { Accept: "application/json" },
+				body: new FormData(form),
+			});
+			const data = await response.json();
+
+			if (response.ok && data.success) {
+				status.textContent =
+					"Thanks for reaching out. I'll get back to you soon.";
+				status.classList.add("is-success");
+				form.reset();
+			} else {
+				status.textContent =
+					data.message || "Something went wrong. Please try emailing me directly.";
+				status.classList.add("is-error");
+			}
+		} catch {
+			status.textContent =
+				"Network error. Please try again or email me directly.";
+			status.classList.add("is-error");
+		} finally {
+			if (button) {
+				button.disabled = false;
+				button.textContent = originalLabel;
+			}
+		}
+	});
+</script>
 
 <style>
 	.contact-container {
@@ -92,6 +145,24 @@ import Layout from '../layouts/Contact.astro';
 	.contact-form {
 		display: grid;
 		gap: 1.5rem;
+	}
+
+	.hidden {
+		display: none !important;
+	}
+
+	.form-status {
+		margin: 0;
+		font-size: 1rem;
+		min-height: 1.5rem;
+	}
+
+	.form-status.is-success {
+		color: var(--accent);
+	}
+
+	.form-status.is-error {
+		color: #fca5a5;
 	}
 
 	.form-group {

@@ -2,7 +2,7 @@
 title: "AG & Business Legal Strategies Redesign Project"
 description: "Another successful client launch for my client BLNKPG"
 pubDate: "Aug 12 2025"
-heroImage: "/images/abls.png"
+heroImage: "/images/abls.webp"
 ---
 
 In collaboration with [BLNKPG](https://www.blnkpg.com/), a woman-owned agency specializing in agricultural marketing, I recently completed a website redesign for [Ag & Business Legal Strategies](https://www.ablsonline.com/), an uncommon law firm focused on agricultural and business law.

@@ -2,8 +2,8 @@
 title: "Yield to Freedom | Income ETF Research Platform"
 description: "A graded, searchable directory of 200+ income ETFs with a transparent A-to-D scoring system, strategy explainers, and income calculators. Built from the ground up with a custom data ingestion engine syncing daily from market data vendors."
 pubDate: "2026-07-02"
-heroImage: "/images/yieldtofreedom_desktop.png"
-mobileImage: "/images/yieldtofreedom_mobile.png"
+heroImage: "/images/yieldtofreedom_desktop.webp"
+mobileImage: "/images/yieldtofreedom_mobile.webp"
 projectUrl: "https://yieldtofreedom.com"
 technologies:
   - "Astro"

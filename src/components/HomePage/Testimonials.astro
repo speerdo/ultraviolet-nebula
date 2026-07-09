@@ -1,0 +1,137 @@
+---
+// Social proof. Replace these placeholder entries with real quotes.
+// Pull them from LinkedIn recommendations or ask past clients/managers.
+// Each entry: quote (the testimonial), name, title, company.
+const testimonials = [
+  {
+    quote:
+      "PLACEHOLDER: Adam's automation system saved our team more than 15 hours a week. The payback was immediate and the accuracy was better than our manual process.",
+    name: "First Last",
+    title: "Director of Operations",
+    company: "Company Name",
+  },
+  {
+    quote:
+      "PLACEHOLDER: He turned a vague idea about AI verification into a production system that just works. Clear communicator, fast, and reliable.",
+    name: "First Last",
+    title: "Founder",
+    company: "Company Name",
+  },
+  {
+    quote:
+      "PLACEHOLDER: Adam has a rare ability to translate complex AI concepts into practical business results. Our engineers adopted his approach across the org.",
+    name: "First Last",
+    title: "Engineering Manager",
+    company: "Company Name",
+  },
+];
+---
+
+{
+  testimonials.length > 0 && (
+    <section id="testimonials" class="testimonials-section">
+      <h2 class="section-title">What Clients & Colleagues Say</h2>
+      <div class="testimonials-grid">
+        {testimonials.map((t) => (
+          <figure class="testimonial-card">
+            <blockquote class="testimonial-quote">{t.quote}</blockquote>
+            <figcaption class="testimonial-author">
+              <span class="testimonial-name">{t.name}</span>
+              <span class="testimonial-role">
+                {t.title}
+                {t.company ? `, ${t.company}` : ""}
+              </span>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+<style>
+  .testimonials-section {
+    width: 100%;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 4rem 1rem;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 4rem;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 72rem;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    .testimonials-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .testimonial-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 2rem;
+    text-align: left;
+    background-color: rgba(17, 12, 34, 0.5);
+    border: 1px solid rgba(248, 250, 252, 0.12);
+    border-radius: 12px;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease,
+      border-color 0.3s ease;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+  }
+
+  .testimonial-quote {
+    margin: 0;
+    padding: 0 0 0 1rem;
+    border-left: 3px solid var(--accent);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    font-style: italic;
+    color: #f8fafc;
+  }
+
+  .testimonial-author {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .testimonial-name {
+    font-weight: 700;
+    color: #f8fafc;
+  }
+
+  .testimonial-role {
+    font-size: 0.95rem;
+    color: rgb(var(--gray-light));
+    opacity: 0.85;
+  }
+
+  @media screen and (max-width: 720px) {
+    .section-title {
+      font-size: 3rem;
+    }
+  }
+</style>

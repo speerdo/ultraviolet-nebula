@@ -2,8 +2,8 @@
 title: "EdReports | Vue.js to Nuxt.js Migration Lead"
 description: "Led the technical migration of EdReports' legacy Java application with Vue 3 components to a modern Nuxt.js framework, improving performance and developer workflow efficiency."
 pubDate: "2025-12-05"
-heroImage: "/images/edreports_desktop.png"
-mobileImage: "/images/edreports_mobile.png"
+heroImage: "/images/edreports_desktop.webp"
+mobileImage: "/images/edreports_mobile.webp"
 projectUrl: "https://edreports.org/reports"
 technologies:
   - "Vue.js"

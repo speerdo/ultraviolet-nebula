@@ -2,7 +2,7 @@
 title: "RecycleOldTech.com: A Hybrid Astro Web App"
 description: "Building a nationwide directory for electronics recycling"
 pubDate: "May 29 2025"
-heroImage: "/images/recycleoldtech_desktop.png"
+heroImage: "/images/recycleoldtech_desktop.webp"
 ---
 
 Every year, millions of electronic devices are discarded improperly, creating significant environmental issues. RecycleOldTech.com is a nationwide directory designed to simplify the process of responsibly recycling electronic waste. As the lead developer, I took this project from concept to deployment, combining web technologies and custom data-handling techniques to deliver a fast, scalable site.

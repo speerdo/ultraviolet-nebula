@@ -2,8 +2,8 @@
 title: "Indiana Agriculture Nutrient Alliance"
 description: "A fully functional content site with WordPress."
 pubDate: "2022-04-10"
-heroImage: "/images/iana_desktop.png"
-mobileImage: "/images/iana.png"
+heroImage: "/images/iana_desktop.webp"
+mobileImage: "/images/iana.webp"
 projectUrl: "https://keepitmidwest.com/"
 technologies: 
   - "WordPress"
