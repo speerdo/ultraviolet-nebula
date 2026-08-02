@@ -8,7 +8,7 @@ const projects = allWork
   .map((p) => ({
     title: p.data.title.split("|")[0].trim(),
     description: p.data.description,
-    image: p.data.mobileImage,
+    image: p.data.heroImage,
     link: `/work/${p.id}`,
   }));
 
