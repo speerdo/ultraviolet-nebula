@@ -5,38 +5,11 @@ import sitemap from '@astrojs/sitemap';
 import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 
-// `sourcemap` is valid at runtime for optimizeDeps output but is omitted from
-// Vite's `OutputOptions` type, so use `any` here to bypass the type mismatch.
-/** @type {any} */
-const optimizeOutput = { sourcemap: false };
-
 // https://astro.build/config
 export default defineConfig({
     site: 'https://www.adamspeerweb.dev',
-    integrations: [
-        mdx(),
-        sitemap(),
-        // vite:react-babel may delete its `transform` in configResolved when it thinks
-        // Babel can be skipped. Vite then keeps a stale per-plugin filter (WeakMap) that
-        // still matches `.jsx` files but `getHookHandler(transform)` is undefined →
-        // "Cannot read properties of undefined (reading 'call')". A no-op Babel plugin
-        // forces `canSkipBabel` to false so the transform hook is never removed.
-        react({
-            include: /\.(jsx|tsx|mdx)$/,
-            babel: {
-                plugins: [() => ({ visitor: {} })],
-            },
-        }),
-    ],
+    integrations: [mdx(), sitemap(), react()],
     vite: {
         plugins: [tailwindcss()],
-        // Pre-bundled client deps (incl. Astro dev toolbar) used to emit
-        // `sourceMappingURL=…entrypoint__js.js.map`, which browsers resolve under
-        // `/@id/...` and get 404. This applies only to dependency optimization, not your app.
-        optimizeDeps: {
-            rolldownOptions: {
-                output: optimizeOutput,
-            },
-        },
     },
 });
