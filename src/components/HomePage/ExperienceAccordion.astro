@@ -1,0 +1,130 @@
+---
+interface Experience {
+  company: string;
+  dates: string;
+  title: string;
+  description: string;
+  bullets?: string[];
+  image: string;
+  link: string;
+}
+
+const { experiences } = Astro.props as { experiences: Experience[] };
+---
+
+<div class="w-full max-w-4xl mx-auto space-y-4" data-accordion>
+  {
+    experiences.map((experience, index) => (
+      <div class="border border-gray-700 rounded overflow-hidden">
+        <button
+          type="button"
+          id={`accordion-trigger-${index}`}
+          aria-expanded="false"
+          aria-controls={`accordion-panel-${index}`}
+          data-accordion-trigger
+          class="flex w-full cursor-pointer flex-col gap-2 p-4 text-left text-white background-accordion md:flex-row md:items-center md:justify-between md:gap-4"
+        >
+          <h3 class="company-name m-0! shrink-0 text-xl">{experience.company}</h3>
+          <div class="flex flex-col gap-1 md:flex-row md:items-center md:gap-0 md:ml-auto">
+            <span class="text-sm text-gray-300 md:mr-4">{experience.dates}</span>
+            <span class="text-sm text-gray-300 tabular-nums" aria-hidden="true" data-accordion-icon>+</span>
+          </div>
+        </button>
+
+        <div
+          id={`accordion-panel-${index}`}
+          role="region"
+          aria-labelledby={`accordion-trigger-${index}`}
+          data-accordion-panel
+          class="accordion-panel bg-gray-900"
+        >
+          <div class="accordion-panel-inner">
+            <div class="p-4 text-gray-100">
+              <h3 class="mb-4 mt-4">{experience.title}</h3>
+
+              <p class="mb-4">{experience.description}</p>
+
+              {experience.bullets && experience.bullets.length > 0 && (
+                <ul class="mb-8 pl-4 space-y-2">
+                  {experience.bullets.map((bullet) => (
+                    <li class="text-gray-200 flex items-start">
+                      <span class="text-blue-400 mr-2">•</span>
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              <div class="flex justify-start mb-8">
+                <div class="w-1/4 h-28 rounded overflow-hidden flex items-center">
+                  <img
+                    src={experience.image}
+                    alt={experience.title}
+                    class="w-full h-full object-contain object-center rounded"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </div>
+
+              <a href={experience.link} target="_blank" rel="noopener noreferrer" class="company-link">
+                Company Website
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .accordion-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 300ms ease;
+  }
+
+  .accordion-panel-inner {
+    overflow: hidden;
+    min-height: 0;
+  }
+
+  [aria-expanded='true'] + .accordion-panel {
+    grid-template-rows: 1fr;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .accordion-panel {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  function setOpen(trigger: HTMLElement, open: boolean) {
+    trigger.setAttribute('aria-expanded', String(open));
+
+    const icon = trigger.querySelector('[data-accordion-icon]');
+    if (icon) icon.textContent = open ? '−' : '+';
+
+    const panel = trigger.nextElementSibling;
+    if (panel) panel.toggleAttribute('inert', !open);
+  }
+
+  document.querySelectorAll('[data-accordion]').forEach((root) => {
+    const triggers = Array.from(
+      root.querySelectorAll<HTMLElement>('[data-accordion-trigger]')
+    );
+
+    triggers.forEach((trigger) => {
+      setOpen(trigger, false);
+
+      trigger.addEventListener('click', () => {
+        const willOpen = trigger.getAttribute('aria-expanded') !== 'true';
+        triggers.forEach((other) => setOpen(other, false));
+        if (willOpen) setOpen(trigger, true);
+      });
+    });
+  });
+</script>

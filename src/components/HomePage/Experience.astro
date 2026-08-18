@@ -1,5 +1,5 @@
 ---
-import ExperienceAccordion from './ExperienceAccordion.jsx';
+import ExperienceAccordion from './ExperienceAccordion.astro';
 
 // Keep your experiences list in Astro frontmatter
 const experiences = [
@@ -63,7 +63,7 @@ const experiences = [
 
 <section id="experience" class="experience-section">
   <h2 class="section-title">Professional Experience</h2>
-  <ExperienceAccordion experiences={experiences} client:load />
+  <ExperienceAccordion experiences={experiences} />
 </section>
 
 <style>
@@ -78,9 +78,5 @@ const experiences = [
     font-weight: 400;
     margin: 3rem auto;
     text-align: center;
-  }
-
-  .projects-grid {
-    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto;
   }
 </style>
