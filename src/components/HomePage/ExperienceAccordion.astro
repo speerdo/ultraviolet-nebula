@@ -56,11 +56,11 @@ const { experiences } = Astro.props as { experiences: Experience[] };
               )}
 
               <div class="flex justify-start mb-8">
-                <div class="w-1/4 h-28 rounded overflow-hidden flex items-center">
+                <div class="company-logo-frame">
                   <img
                     src={experience.image}
-                    alt={experience.title}
-                    class="w-full h-full object-contain object-center rounded"
+                    alt={`${experience.company} logo`}
+                    class="company-logo"
                     loading="lazy"
                     decoding="async"
                   />
@@ -79,6 +79,24 @@ const { experiences } = Astro.props as { experiences: Experience[] };
 </div>
 
 <style>
+  .company-logo-frame {
+    width: 25%;
+    height: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.25rem;
+    overflow: hidden;
+  }
+
+  .company-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 0.25rem;
+  }
+
   .accordion-panel {
     display: grid;
     grid-template-rows: 0fr;
