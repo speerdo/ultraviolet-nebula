@@ -1,8 +1,23 @@
 ---
-import ExperienceAccordion from './ExperienceAccordion.jsx';
+import ExperienceAccordion from './ExperienceAccordion.astro';
 
 // Keep your experiences list in Astro frontmatter
 const experiences = [
+  {
+    company: 'Insight Global (Sallie Mae Bank)',
+    dates: 'Mar 2026 - Present',
+    title: 'Software Engineer (Contract-to-Hire)',
+    description:
+      'Building and enhancing custom applications on Salesforce Experience Cloud for Sallie Mae Bank in an Agile environment. Bringing MCP tooling and AI-assisted workflows to the team while delivering pipeline fixes and process improvements.',
+    bullets: [
+      'Build custom applications on Salesforce Experience Cloud using Apex, Lightning Web Components (LWC), JavaScript, HTML, and CSS',
+      'Introduced MCP (Model Context Protocol) tooling and AI-assisted skills workflows to speed up development and share knowledge',
+      'Contribute pipeline fixes and process improvements, picking up bugs and user stories through sprint planning and backlog refinement',
+      'Collaborate with senior engineers and cross-functional teams to deliver scalable, maintainable solutions in a financial services environment',
+    ],
+    image: '/images/sallie-mae-logo.svg',
+    link: 'https://salliemae.com',
+  },
   {
     company: 'Apex Systems (Eli Lilly and Company)',
     dates: 'April 2023 - Jan 2025',
@@ -63,7 +78,7 @@ const experiences = [
 
 <section id="experience" class="experience-section">
   <h2 class="section-title">Professional Experience</h2>
-  <ExperienceAccordion experiences={experiences} client:load />
+  <ExperienceAccordion experiences={experiences} />
 </section>
 
 <style>
@@ -78,9 +93,5 @@ const experiences = [
     font-weight: 400;
     margin: 3rem auto;
     text-align: center;
-  }
-
-  .projects-grid {
-    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto;
   }
 </style>

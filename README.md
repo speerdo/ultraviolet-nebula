@@ -1,68 +1,84 @@
-# Astro Starter Kit: Blog
+<div align="center">
 
-```sh
-npm create astro@latest -- --template blog
-```
+# ⚡ adamspeerweb.dev
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/blog)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/blog/devcontainer.json)
+**The personal portfolio & blog of [Adam Speer](https://github.com/speerdo)** — AI & Automation Engineer, Full Stack Developer, Indianapolis IN.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+[![Live Site](https://img.shields.io/badge/%F0%9F%9A%80_live-adamspeerweb.dev-8b5cf6?style=for-the-badge)](https://adamspeerweb.dev)
+![Astro](https://img.shields.io/badge/Astro-7-blueviolet?style=for-the-badge&logo=astro&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38bdf8?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6?style=for-the-badge&logo=typescript&logoColor=white)
+![Client JS](https://img.shields.io/badge/framework_JS-0_kb-22c55e?style=for-the-badge)
 
-![blog](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
+*Ships **0 KB of framework JS** to the browser. Interactions — like the professional experience accordion — are hand-rolled with scoped styles and tiny inline `<script>` blocks.*
 
-Features:
+</div>
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+---
+
+## ✨ Highlights
+
+- 🤖 **AI-forward positioning** — featured automation projects, experience, and expertise sections driven by simple data arrays in [Experience.astro](src/components/HomePage/Experience.astro)
+- 🧩 **Zero client-side framework** — React was removed in favor of scoped styles, semantic markup, and small inline `<script>` blocks (see [`ExperienceAccordion.astro`](src/components/HomePage/ExperienceAccordion.astro))
+- 📝 **Content collections** — blog and work case studies as typed Markdown/MDX with schema validation
+- 🎨 **Custom design system** — purple-nebula theme, Smooch Sans + Lato, Tailwind v4 via Vite plugin
+- 🔍 **SEO-ready** — sitemap, RSS feed, OpenGraph tags, canonical URLs
+- 📄 **Resume distribution** — versioned PDFs served straight from `public/pdf/`
+
+## 🧰 Tech Stack
+
+| Layer | Choice |
+| :--- | :--- |
+| Framework | [Astro 7](https://astro.build) (static output) |
+| Styling | Tailwind CSS 4 + scoped component styles |
+| Language | TypeScript (`strict`) |
+| Content | Astro Content Collections (Markdown + MDX) |
+| Hosting | Vercel (+ `@vercel/analytics`) |
 
 ## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
-
 ```text
+/
 ├── public/
+│   ├── fonts/          # Smooch Sans, Lato
+│   ├── images/         # logos, project screenshots, OG images
+│   └── pdf/            # resume versions
 ├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
+│   ├── components/
+│   │   └── HomePage/   # Experience, Expertise, Work, Testimonials
+│   ├── content/
+│   │   ├── blog/       # blog posts (MD/MDX)
+│   │   └── work/       # project case studies (MD/MDX)
+│   ├── layouts/        # Base, BlogPost, WorkPost, Contact
+│   ├── pages/          # file-based routes
+│   ├── styles/         # global.css (theme tokens, Tailwind entry)
+│   ├── consts.ts       # site title & description
+│   └── content.config.ts
+└── astro.config.mjs
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
-
-Any static assets, like images, can be placed in the `public/` directory.
+Astro looks for `.astro` / `.md` / `.mdx` files in `src/pages/` — each becomes a route based on its filename.
 
 ## 🧞 Commands
 
-All commands are run from the root of the project, from a terminal:
+All commands run from the project root:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| Command | Action |
+| :--- | :--- |
+| `npm install` | Install dependencies |
+| `npm run dev` | Dev server at `localhost:4321` |
+| `npm run build` | Production build to `./dist/` |
+| `npm run preview` | Preview the production build locally |
+| `npx astro check` | TypeScript + `.astro` diagnostics |
 
-## 👀 Want to learn more?
+## 📬 Elsewhere
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-adam--speer-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/adam-speer)
+[![GitHub](https://img.shields.io/badge/GitHub-speerdo-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/speerdo)
+[![Email](https://img.shields.io/badge/Email-adamspeer@gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:adamspeer@gmail.com)
+
+---
 
 ## Credit
 
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+Theme inspired by the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/) and built on the [Astro blog starter](https://github.com/withastro/astro/tree/latest/examples/blog). Rest of it — handcrafted. 🛠️
