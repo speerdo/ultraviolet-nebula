@@ -5,6 +5,12 @@ updates:
     schedule:
       interval: weekly
     open-pull-requests-limit: 10
+    ignore:
+      # TypeScript 7 conflicts with @astrojs/check (peer: ^5.0.0 || ^6.0.0).
+      # Remove once @astrojs/check publishes TS 7 support.
+      - dependency-name: typescript
+        update-types:
+          - version-update:semver-major
     groups:
       astro:
         patterns:
