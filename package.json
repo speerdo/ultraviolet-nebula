@@ -16,12 +16,12 @@
     "astro": "^7.4.0"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.10",
+    "@astrojs/check": "^0.9.12",
     "@tailwindcss/vite": "^4.3.3",
-    "autoprefixer": "^10.6.1",
-    "postcss": "^8.5.26",
+    "autoprefixer": "^10.6.2",
+    "postcss": "^8.5.32",
     "prettier": "^3.9.10",
-    "prettier-plugin-astro": "^1.1.1",
+    "prettier-plugin-astro": "^1.1.2",
     "tailwindcss": "^4.3.3",
     "typescript": "^6.0.3"
   },
