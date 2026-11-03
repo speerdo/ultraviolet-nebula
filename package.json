@@ -9,20 +9,20 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^8.1.0",
+    "@astrojs/mdx": "^8.1.2",
     "@astrojs/rss": "^4.0.19",
-    "@astrojs/sitemap": "^3.7.3",
+    "@astrojs/sitemap": "^3.7.4",
     "@vercel/analytics": "^2.0.1",
-    "astro": "^7.4.0"
+    "astro": "^7.4.5"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.10",
-    "@tailwindcss/vite": "^4.3.3",
-    "autoprefixer": "^10.6.1",
-    "postcss": "^8.5.26",
+    "@astrojs/check": "^0.9.12",
+    "@tailwindcss/vite": "^4.3.4",
+    "autoprefixer": "^10.6.2",
+    "postcss": "^8.5.32",
     "prettier": "^3.9.10",
-    "prettier-plugin-astro": "^1.1.1",
-    "tailwindcss": "^4.3.3",
+    "prettier-plugin-astro": "^1.1.2",
+    "tailwindcss": "^4.3.4",
     "typescript": "^6.0.3"
   },
   "overrides": {
