@@ -1,7 +1,7 @@
 ---
 title: "Home Water Pure | Sourced Water Softener & Filter Guide"
 description: "An independent guide to whole-home water softeners and filters, comparing 37 systems on rated capacity, service flow, certification status, and live price, with the sizing math shown on the page."
-pubDate: "2026-08-21"
+pubDate: "2026-10-18"
 heroImage: "/images/homewaterpure_desktop.webp"
 mobileImage: "/images/homewaterpure_mobile.webp"
 projectUrl: "https://homewaterpure.com"
